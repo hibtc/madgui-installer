@@ -1,0 +1,15 @@
+[submodule "cpymad"]
+	path = cpymad
+	url = ssh://git@github.com/hibtc/cpymad
+[submodule "madgui"]
+	path = madgui
+	url = ssh://git@github.com/hibtc/madgui
+[submodule "madseq"]
+	path = madseq
+	url = ssh://git@github.com/hibtc/madseq
+[submodule "hit_models"]
+	path = hit_models
+	url = ssh://git@bitbucket.org/coldfix/hit-models
+[submodule "hit_online_control"]
+	path = hit_online_control
+	url = ssh://git@bitbucket.org/coldfix/hit-online-control.git
