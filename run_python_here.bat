@@ -1,3 +1,3 @@
 @echo off
-call setvars
+call scripts\_setvars
 python

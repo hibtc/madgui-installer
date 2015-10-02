@@ -1,2 +1,2 @@
 model_pathes:
-  - ./hit_models/*
+  - ./libs/hit_models/*

@@ -1,2 +1,2 @@
-call setvars
-python hit_online_control\run.py
+call scripts\_setvars
+python libs\hit_online_control\run.py

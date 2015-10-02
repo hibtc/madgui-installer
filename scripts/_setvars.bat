@@ -11,7 +11,7 @@ set PATH=%PATH%;%CD%
 rem Add portable-lib to PYTHONPATH, so sitecustomize.py will
 rem automatically be executed whenever a python interpreter is fired:
 if DEFINED PYTHONPATH (
-    set PYTHONPATH=%PYTHONPATH%;%CD%\portable-lib
+    set PYTHONPATH=%PYTHONPATH%;%CD%\libs
 ) ELSE (
-    set PYTHONPATH=%CD%\portable-lib
+    set PYTHONPATH=%CD%\libs
 )
