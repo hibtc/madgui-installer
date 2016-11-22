@@ -1,9 +1,6 @@
 [submodule "cpymad"]
 	path = libs/cpymad
 	url = ssh://git@github.com/hibtc/cpymad
-[submodule "madgui"]
-	path = libs/madgui
-	url = ssh://git@github.com/hibtc/madgui
 [submodule "madseq"]
 	path = libs/madseq
 	url = ssh://git@github.com/hibtc/madseq
@@ -13,3 +10,12 @@
 [submodule "hit_online_control"]
 	path = libs/hit_online_control
 	url = ssh://git@bitbucket.org/coldfix/hit-online-control.git
+[submodule "libs/madqt"]
+	path = libs/madqt
+	url = git@github.com:hibtc/madqt.git
+[submodule "libs/pytao"]
+	path = libs/pytao
+	url = git@github.com:hibtc/pytao.git
+[submodule "libs/minrpc"]
+	path = libs/minrpc
+	url = git@github.com:hibtc/minrpc.git
