@@ -1,2 +1,2 @@
-model_pathes:
-  - ./libs/hit_models/*
+model_path: ./dev/hit_models
+load_default: hht2
