@@ -1,6 +1,6 @@
 @echo off
 call %~dp0\scripts\setvars
-python %*
+python -m madqt %*
 if ERRORLEVEL 1 (
     pause
 )
