@@ -8,5 +8,5 @@ import os
 import site
 
 this_dir = os.path.dirname(__file__)
-site_dir = os.path.join(this_dir, 'site-packages')
-site.addsitedir(site_dir)
+site.addsitedir(os.path.join(this_dir, 'site-packages'))
+site.addsitedir(os.path.join(this_dir, '..', 'dev'))

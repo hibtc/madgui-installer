@@ -1,21 +1,21 @@
 [submodule "cpymad"]
-	path = libs/cpymad
+	path = dev/cpymad
 	url = ssh://git@github.com/hibtc/cpymad
 [submodule "madseq"]
-	path = libs/madseq
+	path = dev/madseq
 	url = ssh://git@github.com/hibtc/madseq
 [submodule "hit_models"]
-	path = libs/hit_models
+	path = dev/hit_models
 	url = ssh://git@bitbucket.org/coldfix/hit-models
 [submodule "hit_online_control"]
-	path = libs/hit_online_control
+	path = dev/hit_online_control
 	url = ssh://git@bitbucket.org/coldfix/hit-online-control.git
 [submodule "libs/madqt"]
-	path = libs/madqt
+	path = dev/madqt
 	url = git@github.com:hibtc/madqt.git
 [submodule "libs/pytao"]
-	path = libs/pytao
+	path = dev/pytao
 	url = git@github.com:hibtc/pytao.git
 [submodule "libs/minrpc"]
-	path = libs/minrpc
+	path = dev/minrpc
 	url = git@github.com:hibtc/minrpc.git
