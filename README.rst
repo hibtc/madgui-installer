@@ -36,7 +36,7 @@ download and install the following packages as well as their dependencies into
 ``lib/`` using the configured python interpreter:
 
 - minrpc_, cpymad_, madqt_, pydicti_ (maintained by us)
-- numpy_, matplotlib_, PyYAML_, docutils_, ipython_, qtconsole_, docopt_, `pint 0.6`_
+- numpy_, matplotlib_, six_, PyYAML_, docutils_, ipython_, qtconsole_, docopt_, `pint 0.6`_
 
 If you have trouble installing cpymad_, you may need to `build cpymad and
 MAD-X manually`_. If this doesn't work, please give us a note.
@@ -47,7 +47,8 @@ MAD-X manually`_. If this doesn't work, please give us a note.
 .. _pydicti: https://pypi.python.org/pypi/pydicti/
 .. _numpy: https://pypi.python.org/pypi/numpy/
 .. _matplotlib: https://pypi.python.org/pypi/matplotlib/
-.. _docutils: http://docutils.sourceforge.net/
+.. _six: https://pypi.python.org/pypi/six/
+.. _docutils: https://pypi.python.org/pypi/docutils/
 .. _ipython: https://pypi.python.org/pypi/ipython/
 .. _qtconsole: https://pypi.python.org/pypi/qtconsole/
 .. _pint 0.6: https://pypi.python.org/pypi/Pint/0.6

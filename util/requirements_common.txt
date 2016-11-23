@@ -7,3 +7,4 @@ pint==0.6
 pydicti
 PyYAML
 qtconsole
+six
