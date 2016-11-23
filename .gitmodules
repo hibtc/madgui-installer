@@ -1,21 +1,21 @@
+[submodule "minrpc"]
+	path = dev/minrpc
+	url = git@github.com:hibtc/minrpc
 [submodule "cpymad"]
 	path = dev/cpymad
-	url = https://github.com/hibtc/cpymad
+	url = git@github.com:hibtc/cpymad
 [submodule "madseq"]
 	path = dev/madseq
-	url = https://github.com/hibtc/madseq
+	url = git@github.com:hibtc/madseq
+[submodule "pytao"]
+	path = dev/pytao
+	url = git@github.com:hibtc/pytao
+[submodule "madqt"]
+	path = dev/madqt
+	url = git@github.com:hibtc/madqt
 [submodule "hit_models"]
 	path = dev/hit_models
 	url = git@bitbucket.org:coldfix/hit-models
 [submodule "hit_online_control"]
 	path = dev/hit_online_control
 	url = git@bitbucket.org:coldfix/hit-online-control
-[submodule "libs/madqt"]
-	path = dev/madqt
-	url = https://github.com/hibtc/madqt
-[submodule "libs/pytao"]
-	path = dev/pytao
-	url = https://github.com/hibtc/pytao
-[submodule "libs/minrpc"]
-	path = dev/minrpc
-	url = https://github.com/hibtc/minrpc
