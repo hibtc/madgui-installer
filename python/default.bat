@@ -1,1 +1,1 @@
-call python27_32bit_local
+call winpython27_32bit.bat
