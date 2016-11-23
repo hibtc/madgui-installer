@@ -1,0 +1,9 @@
+docopt
+docutils
+ipython
+numpy
+matplotlib
+pint==0.6
+pydicti
+PyYAML
+qtconsole

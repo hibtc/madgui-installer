@@ -1,3 +1,3 @@
 @echo off
-call %~dp0\scripts\setvars
+call %~dp0\util\setvars
 cmd %*

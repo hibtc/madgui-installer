@@ -31,7 +31,7 @@ Static installation
 ~~~~~~~~~~~~~~~~~~~
 
 If you're not going to do any development on the package itself, the easiest
-way to get all the packages is by executing ``tools/INSTALL.bat``. This will
+way to get all the packages is by executing ``util/INSTALL.bat``. This will
 download and install the following packages as well as their dependencies into
 ``lib/`` using the configured python interpreter:
 
@@ -100,7 +100,7 @@ Usage
 Once you're through with the setup process, you should be able to start MadQt
 using the ``run_madqt.bat`` script in the root directory.
 
-The ``run_python.bat`` and ``run_terminal.bat`` scripts can be used to open
+The ``run_python.bat`` and ``run_terminal.bat`` util can be used to open
 either a python shell or command window in the same environment under which
 MadQt would be opened.
 
@@ -117,6 +117,5 @@ Folders
     lib                         Statically installed python packages
     python                      Python distributions
     runtime                     Runtime libraries (Put BeamOptikDLL.dll here)
-    scripts                     Private utilities, do not use directly.
     src                         Source for python packages under development
-    tools                       Utility scripts for user
+    util                        Install scripts and utilities

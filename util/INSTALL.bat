@@ -1,10 +1,10 @@
 :: Install MadQt in release-mode
 @echo off
-call %~dp0\..\scripts\setvars
+call %~dp0\setvars
 
 :: Install common python packages
 pip install --target %MADQT_PYTHON_PACKAGES% --ignore-installed ^
-    -r %MADQT_ROOT%\scripts\requirements_common.txt
+    -r %MADQT_ROOT%\util\requirements_common.txt
 
 :: Install "easy" dependencies
 pip install --target %MADQT_PYTHON_PACKAGES% ^

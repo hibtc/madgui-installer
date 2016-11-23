@@ -1,7 +1,7 @@
 :: Install cpymad C-extension in the local src folder, you need to download
 :: the cpymad module first
 @echo off
-call %~dp0\..\scripts\setvars
+call %~dp0\setvars
 
 cd %MADQT_ROOT%\madgui-portable\cpymad
 
