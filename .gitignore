@@ -35,3 +35,8 @@ pip-log.txt
 .tox
 nosetests.xml
 htmlcov
+
+# Project specific files
+lib/site-packages
+bin
+runtime
