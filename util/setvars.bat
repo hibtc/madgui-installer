@@ -1,3 +1,5 @@
+:: This script is called from other scripts to activate the python environment.
+
 :: Determine path of parent folder:
 for %%a in (%~dp0..) do set _BASE=%%~fa
 set MADQT_ROOT=%_BASE%
