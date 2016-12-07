@@ -6,6 +6,26 @@ Folder structure and scripts for getting a portable windows version of madqt_.
 .. _madqt: https://github.com/hibtc/madqt
 
 
+Alternatives
+------------
+
+It may be more reliable and require less manual labour to use one of the
+following tools to craft a portable application:
+
+- PyInstaller_ (cross-platform)
+- cx_Freeze_ (cross-platform)
+- py2exe_ (windows)
+- py2app_ (Mac OS X)
+
+.. _PyInstaller: http://www.pyinstaller.org/
+.. _cx_Freeze: http://cx-freeze.sourceforge.net/
+.. _py2exe: http://www.py2exe.org/
+.. _py2app: http://pythonhosted.org/py2app/
+
+If you succeed in using one of those tools, you are welcome to contribute a
+short guide here.
+
+
 Setup
 -----
 
