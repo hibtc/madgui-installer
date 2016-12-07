@@ -5,7 +5,7 @@ for %%a in (%~dp0..) do set _BASE=%%~fa
 set MADQT_ROOT=%_BASE%
 
 :: Make sure BeamOptikDLL.dll can be found later on:
-set PATH=%PATH%;%MADQT_ROOT%\bin;%MADQT_ROOT%\runtime
+set PATH=%MADQT_ROOT%\bin;%MADQT_ROOT%\runtime;%PATH%
 
 :: Add python to PATH:
 set MADQT_PYTHON_INIT=%MADQT_ROOT%\python\default.bat
@@ -15,7 +15,7 @@ set MADQT_PYTHON_PACKAGES=%MADQT_ROOT%\lib\%MADQT_ARCH%\python%MADQT_PYTHON_VERS
 :: Add 'lib' folder to PYTHONPATH, so sitecustomize.py will automatically
 :: be imported whenever a python interpreter is fired:
 if DEFINED PYTHONPATH (
-    set PYTHONPATH=%PYTHONPATH%;%MADQT_ROOT%\lib
+    set PYTHONPATH=%MADQT_ROOT%\lib;%PYTHONPATH%
 ) ELSE (
     set PYTHONPATH=%MADQT_ROOT%\lib
 )
