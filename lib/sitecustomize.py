@@ -8,8 +8,9 @@ import os
 import site
 import sys
 
-this_dir = os.path.dirname(__file__)
-site.addsitedir(os.path.join(this_dir, '32', 'python2.7'))
-site.addsitedir(os.path.join(this_dir, '..', 'src'))
+py_ver = "{}.{}".format(*sys.version_info[:2])
+py_arch = ("32", "64")[sys.maxsize > 2**32]
 
-# sys.path.append(os.path.join(this_dir, '32', 'python2.7'))
+this_dir = os.path.dirname(__file__)
+site.addsitedir(os.path.join(this_dir, 'python{}-{}bit'.format(py_ver, py_arch)))
+site.addsitedir(os.path.join(this_dir, '..', 'src'))

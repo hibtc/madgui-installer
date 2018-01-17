@@ -1,1 +1,1 @@
-call %~dp0\winpython27_32bit.bat
+call "%~dp0\winpython34_64bit.bat"

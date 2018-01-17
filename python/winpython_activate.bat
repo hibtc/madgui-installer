@@ -1,8 +1,9 @@
 :: Find and activate a WinPython distribution installed in this folder.
-:: Before calling, you must first set MADQT_ARCH and MADQT_PYTHON_VERSION
+:: Before calling, you must first set PY_ARCH and PY_VER
 
-for /f "tokens=*" %%A in ('dir /b "%~dp0\WinPython-%MADQT_ARCH%bit-%MADQT_PYTHON_VERSION%.*"') do (
-    set MADQT_PYTHON_FOLDER=%~dp0\%%A
+set PY_ROOT=%~dp0
+for /f "tokens=*" %%A in ('dir /b "%PY_ROOT%\WinPython-%PY_ARCH%bit-%PY_VER%.*"') do (
+    set PY_DIR=%PY_ROOT%\%%A
 )
 
-call %MADQT_PYTHON_FOLDER%\scripts\env.bat
+call "%PY_DIR%\scripts\env.bat"
