@@ -16,6 +16,6 @@
 [submodule "hit_models"]
 	path = src/hit_models
 	url = git@bitbucket.org:coldfix/hit-models
-[submodule "hit_online_control"]
-	path = src/hit_online_control
+[submodule "hit_csys"]
+	path = src/hit_csys
 	url = git@bitbucket.org:coldfix/hit-online-control

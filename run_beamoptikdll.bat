@@ -1,6 +1,6 @@
 @echo off
 call %~dp0\util\setvars
-python -m hit.online_control.qt %*
+python -m hit_csys.gui_qt %*
 if ERRORLEVEL 1 (
     pause
 )

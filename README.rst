@@ -93,14 +93,14 @@ In particular, this fetches the repositories at::
     https://github.com/hibtc/madseq
     https://github.com/hibtc/pytao
     https://bitbucket.org/coldfix/hit-models
-    https://bitbucket.org/coldfix/hit-online-control
+    https://bitbucket.org/coldfix/hit-csys
 
 Note that, currently,
 
 - ``madseq`` is related but not a dependency,
 - ``pytao`` will be required to interface with bmad, but is currently
   unsupported,
-- ``hit-models`` and ``hit-online-control`` are private repositories needed
+- ``hit-models`` and ``hit-csys`` are private repositories needed
   for working with the HIT sequences. These can only be cloned if you have
   been granted read access.
 
