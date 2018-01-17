@@ -2,7 +2,7 @@
 @echo off
 call "%~dp0\setvars"
 
-for /f "tokens=*" %%a in ('dir /b "%MADQT_ROOT%\src\*"') do (
+for /f "tokens=*" %%a in ('dir /b /a:d /o:n "%MADQT_ROOT%\src\*"') do (
     if exist "%~fa\setup.py" (
         cd "%~fa"
         python setup.py egg_info
