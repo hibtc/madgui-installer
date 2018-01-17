@@ -11,6 +11,7 @@ set PATH=%MADQT_ROOT%\bin;%MADQT_ROOT%\runtime;%PATH%
 set MADQT_PYTHON_INIT=%MADQT_ROOT%\python\default.bat
 call %MADQT_PYTHON_INIT%
 set MADQT_PYTHON_PACKAGES=%MADQT_ROOT%\lib\%MADQT_ARCH%\python%MADQT_PYTHON_VERSION%
+set MADQT_PYTHON_SOURCES=%MADQT_ROOT%\src
 
 :: Add 'lib' folder to PYTHONPATH, so sitecustomize.py will automatically
 :: be imported whenever a python interpreter is fired:

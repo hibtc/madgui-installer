@@ -115,6 +115,30 @@ likely to fail and involve some debugging.
 pytao is not yet ready for use on windows.
 
 
+pytao
+~~~~~
+
+Building pytao on windows
+using pytao on windows -> set distribution vars
+
+
+In order to use MadQt with `Bmad/tao`_, build Bmad with MSYS2_ as described on
+`Information for Windows Setup of a Bmad Distribution`_
+
+.. _Bmad/tao: https://www.classe.cornell.edu/~dcs/bmad/
+.. _MSYS2: http://msys2.github.io/
+.. _Information for Windows Setup of a Bmad Distribution:
+        https://wiki.classe.cornell.edu/ACC/ACL/WindowsSetup
+
+Then execute ``util/build_pytao.bat`` to build pytao.
+
+    ->
+
+    python setup.py build_ext --inplace
+    python setup.py egg_info
+
+
+
 Usage
 -----
 
