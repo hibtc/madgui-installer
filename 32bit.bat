@@ -1,1 +1,0 @@
-echo set "PY_ARCH=32" >>customize.bat

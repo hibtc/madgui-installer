@@ -1,15 +1,11 @@
 :: This script is called from other scripts to activate the python environment.
 
 :: First load user custom config
-if exist "%~dp0..\customize.bat" call "%~dp0..\customize.bat"
+if exist "%~dp0..\env.bat" call "%~dp0..\env.bat"
 
 :: Determine path of parent folder:
 for %%a in (%~dp0..) do set _BASE=%%~fa
 set MADQT_ROOT=%_BASE%
-set MADQT_BIN=%MADQT_ROOT%\bin
-set MADQT_LIB=%MADQT_ROOT%\lib
-set MADQT_SRC=%MADQT_ROOT%\src
-set PY_SRC=%MADQT_SRC%
 
 
 :: Make sure BeamOptikDLL.dll and other scripts can be found later on:
@@ -29,9 +25,10 @@ call "%PY_DIR%\scripts\env.bat"
 
 
 :: Depend on python version/architecture
-set PY_LIB=%MADQT_LIB%\python%PY_VER%-%PY_ARCH%bit
-set PY_PIP=%MADQT_ROOT%\pip\python%PY_VER%-%PY_ARCH%bit
-set MADX_BIN=%MADQT_BIN%\madx%PY_ARCH%
+set PY_SRC=%MADQT_ROOT%\src
+set PY_LIB=%MADQT_ROOT%\lib\python%PY_VER%-%PY_ARCH%bit
+set PY_PIP=%MADQT_ROOT%\cache\python%PY_VER%-%PY_ARCH%bit
+set MADX_BIN=%MADQT_ROOT%\bin\madx%PY_ARCH%
 
 
 :: Add 'lib' folder to PYTHONPATH, so sitecustomize.py will automatically
