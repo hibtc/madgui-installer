@@ -1,9 +1,8 @@
 :: Install MadQt in development-mode
 @echo off
 call "%~dp0\setvars"
-echo on
-
 if not exist "%PY_PIP%" ( mkdir "%PY_PIP%" )
+echo on
 
 :: First download everything (can be used for offline installation later):
 pip download -d "%PY_PIP%" ^
