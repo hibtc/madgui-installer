@@ -1,5 +1,8 @@
 :: This script is called from other scripts to activate the python environment.
 
+:: First load user custom config
+if exist "%~dp0..\customize.bat" call "%~dp0..\customize.bat"
+
 :: Determine path of parent folder:
 for %%a in (%~dp0..) do set _BASE=%%~fa
 set MADQT_ROOT=%_BASE%
@@ -14,11 +17,19 @@ set PATH="%MADQT_ROOT%\bin";"%MADQT_ROOT%\runtime";"%MADX_BIN%\bin";%PATH%
 
 
 :: Add python to PATH:
-call "%MADQT_ROOT%\python\default.bat"
-set PY_LIB=%MADQT_LIB%\python%PY_VER%-%PY_ARCH%bit
+if not defined PY_ARCH set PY_ARCH=64
+if not defined PY_VER  set PY_VER=3.4
+if not defined PY_ROOT set PY_ROOT=%MADQT_ROOT%\python
+if not defined PY_DIR (
+    for /f "tokens=*" %%A in ('dir /b /a:d /o:n "%PY_ROOT%\WinPython-%PY_ARCH%bit-%PY_VER%.*"') do (
+        set PY_DIR=%PY_ROOT%\%%A
+    )
+)
+call "%PY_DIR%\scripts\env.bat"
 
 
 :: Depend on python version/architecture
+set PY_LIB=%MADQT_LIB%\python%PY_VER%-%PY_ARCH%bit
 set PY_PIP=%MADQT_ROOT%\pip\python%PY_VER%-%PY_ARCH%bit
 set MADX_BIN=%MADQT_BIN%\madx%PY_ARCH%
 
