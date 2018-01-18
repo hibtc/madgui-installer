@@ -6,6 +6,6 @@ if not exist "%PY_PIP%" ( mkdir "%PY_PIP%" )
 echo on
 
 pip install --download "%PY_PIP%" cpymad
-pip install --target "%PY_LIB%" --find-links "%PY_PIP%" -I cpymad
+pip install --target "%PY_LIB%" --find-links "%PY_PIP%" cpymad
 
 @pause

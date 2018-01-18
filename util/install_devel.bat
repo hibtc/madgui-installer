@@ -10,7 +10,7 @@ pip install --download "%PY_PIP%" ^
     -r "%MADQT_ROOT%\util\requirements.txt"
 
 :: Install common python packages
-pip install --target "%PY_LIB%" --find-links "%PY_PIP%" -I ^
+pip install --target "%PY_LIB%" --find-links "%PY_PIP%" ^
     -r "%MADQT_ROOT%\util\requirements.txt"
 
 :: Install "easy" dependencies

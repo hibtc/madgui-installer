@@ -15,12 +15,12 @@ pip install --download "%PY_PIP%" ^
     cpymad madqt
 
 :: Install requirements.txt first to allow specify package versions:
-pip install --target "%PY_LIB%" --find-links "%PY_PIP%" -I ^
+pip install --target "%PY_LIB%" --find-links "%PY_PIP%" ^
     -r "%MADQT_ROOT%\util\requirements.txt"
 
 :: Install cpymad last (better in case anything goes wrong):
-pip install --target "%PY_LIB%" --find-links "%PY_PIP%" -I minrpc
-pip install --target "%PY_LIB%" --find-links "%PY_PIP%" -I madqt
-pip install --target "%PY_LIB%" --find-links "%PY_PIP%" -I cpymad
+pip install --target "%PY_LIB%" --find-links "%PY_PIP%" minrpc
+pip install --target "%PY_LIB%" --find-links "%PY_PIP%" madqt
+pip install --target "%PY_LIB%" --find-links "%PY_PIP%" cpymad
 
 @pause
