@@ -4,8 +4,8 @@
 call "%~dp0\setvars"
 
 :: Find MAD-X in `src/`, must be downloaded before.
-for /f "tokens=*" %%A in ('dir /b /a:d /o:n "%~dp0\MAD-X*"') do (
-    set MADX_SRC=%~dp0\%%A
+for /f "tokens=*" %%A in ('dir /b /a:d /o:n "%MADQT_SRC%\MAD-X*"') do (
+    set MADX_SRC=%MADQT_SRC%\%%A
 )
 
 set builddir="%MADX_SRC%\build%PY_ARCH%"
