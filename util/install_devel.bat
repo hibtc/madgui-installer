@@ -6,7 +6,7 @@ echo on
 if not exist "%PY_PIP%" ( mkdir "%PY_PIP%" )
 
 :: First download everything (can be used for offline installation later):
-pip install --download "%PY_PIP%" ^
+pip download -d "%PY_PIP%" ^
     -r "%MADQT_ROOT%\util\requirements.txt"
 
 :: Install common python packages

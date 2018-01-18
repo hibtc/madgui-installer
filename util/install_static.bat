@@ -8,11 +8,8 @@ echo on
 pip install --upgrade pip
 
 :: First download everything (can be used for offline installation later):
-pip install --download "%PY_PIP%" ^
-    -r "%MADQT_ROOT%\util\requirements.txt"
-
-pip install --download "%PY_PIP%" ^
-    cpymad madqt
+pip download -d "%PY_PIP%" -r "%MADQT_ROOT%\util\requirements.txt"
+pip download -d "%PY_PIP%" cpymad madqt
 
 :: Install requirements.txt first to allow specify package versions:
 pip install --target "%PY_LIB%" --find-links "%PY_PIP%" ^
