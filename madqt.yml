@@ -1,2 +1,6 @@
 model_path: ./src/hit_models
 load_default: hht2
+
+mainwindow:
+  # adjust y-position for BeamOptikDLL banner:
+  init_pos: [0, 150]
