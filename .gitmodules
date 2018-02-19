@@ -10,9 +10,9 @@
 [submodule "pytao"]
 	path = src/pytao
 	url = git@github.com:hibtc/pytao
-[submodule "madqt"]
-	path = src/madqt
-	url = git@github.com:hibtc/madqt
+[submodule "madgui"]
+	path = src/madgui
+	url = git@github.com:hibtc/madgui
 [submodule "hit_models"]
 	path = src/hit_models
 	url = git@bitbucket.org:coldfix/hit-models

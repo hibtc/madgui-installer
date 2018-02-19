@@ -1,10 +1,10 @@
-madqt-portable
+madgui-portable
 ==============
 
 Folder structure and scripts for getting a portable development version of
-madqt_ for windows.
+madgui_ for windows.
 
-.. _madqt: https://github.com/hibtc/madqt
+.. _madgui: https://github.com/hibtc/madgui
 
 
 Folders
@@ -29,7 +29,7 @@ Static installation
 
 - Obtain the folder structure and utility scripts::
 
-    git clone https://github.com/hibtc/madqt-portable
+    git clone https://github.com/hibtc/madgui-portable
 
 - Install `WinPython 3.4 Qt5`_ in its own folder under ``python/``, e.g.
   ``python/WinPython-64bit-3.4.4.4Qt5``.
@@ -48,7 +48,7 @@ Development version
 
 - In *git bash*::
 
-    git clone https://github.com/hibtc/madqt-portable && cd madqt-portable
+    git clone https://github.com/hibtc/madgui-portable && cd madgui-portable
     git submodule update --init -j 2
 
 - Install `WinPython 3.4 Qt5`_ in its own folder under ``python/``, e.g.
@@ -81,7 +81,7 @@ Development version
 Usage
 -----
 
-Double-click on ``run_madqt.bat``.
+Double-click on ``run_madgui.bat``.
 
 
 Troubleshooting

@@ -5,17 +5,17 @@ if exist "%~dp0..\env.bat" call "%~dp0..\env.bat"
 
 :: Determine path of parent folder:
 for %%a in (%~dp0..) do set _BASE=%%~fa
-set MADQT_ROOT=%_BASE%
+set MADGUI_ROOT=%_BASE%
 
 
 :: Make sure BeamOptikDLL.dll and other scripts can be found later on:
-set PATH="%MADQT_ROOT%\bin";"%MADQT_ROOT%\runtime";"%MADX_BIN%\bin";%PATH%
+set PATH="%MADGUI_ROOT%\bin";"%MADGUI_ROOT%\runtime";"%MADX_BIN%\bin";%PATH%
 
 
 :: Add python to PATH:
 if not defined PY_ARCH set PY_ARCH=64
 if not defined PY_VER  set PY_VER=3.4
-if not defined PY_ROOT set PY_ROOT=%MADQT_ROOT%\python
+if not defined PY_ROOT set PY_ROOT=%MADGUI_ROOT%\python
 if not defined PY_DIR (
     for /f "tokens=*" %%A in ('dir /b /a:d /o:n "%PY_ROOT%\WinPython-%PY_ARCH%bit-%PY_VER%.*"') do (
         set PY_DIR=%PY_ROOT%\%%A
@@ -25,16 +25,16 @@ call "%PY_DIR%\scripts\env.bat"
 
 
 :: Depend on python version/architecture
-set PY_SRC=%MADQT_ROOT%\src
-set PY_LIB=%MADQT_ROOT%\lib\python%PY_VER%-%PY_ARCH%bit
-set PY_PIP=%MADQT_ROOT%\cache\python%PY_VER%-%PY_ARCH%bit
-set MADX_BIN=%MADQT_ROOT%\bin\madx%PY_ARCH%
+set PY_SRC=%MADGUI_ROOT%\src
+set PY_LIB=%MADGUI_ROOT%\lib\python%PY_VER%-%PY_ARCH%bit
+set PY_PIP=%MADGUI_ROOT%\cache\python%PY_VER%-%PY_ARCH%bit
+set MADX_BIN=%MADGUI_ROOT%\bin\madx%PY_ARCH%
 
 
 :: Add 'lib' folder to PYTHONPATH, so sitecustomize.py will automatically
 :: be imported whenever a python interpreter is fired:
 if DEFINED PYTHONPATH (
-    set PYTHONPATH=%MADQT_ROOT%\lib;%PYTHONPATH%
+    set PYTHONPATH=%MADGUI_ROOT%\lib;%PYTHONPATH%
 ) ELSE (
-    set PYTHONPATH=%MADQT_ROOT%\lib
+    set PYTHONPATH=%MADGUI_ROOT%\lib
 )
