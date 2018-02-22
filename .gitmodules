@@ -15,7 +15,7 @@
 	url = git@github.com:hibtc/madgui
 [submodule "hit_models"]
 	path = src/hit_models
-	url = git@bitbucket.org:coldfix/hit-models
+	url = git@github.com:hibtc/hit_models
 [submodule "hit_csys"]
 	path = src/hit_csys
-	url = git@bitbucket.org:coldfix/hit-online-control
+	url = git@github.com:hibtc/hit_csys
