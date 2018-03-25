@@ -5,7 +5,7 @@ call "%~dp0\setvars"
 
 cd "%PY_SRC%\cpymad"
 
-call python setup.py build_ext --madxdir="%MADX_BIN%"
+call python setup.py build_ext --madxdir="%MADX_BIN%" --static
 call python setup.py build_ext --inplace
 call python setup.py egg_info
 

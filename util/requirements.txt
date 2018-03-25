@@ -8,3 +8,4 @@ pydicti
 PyYAML
 qtconsole
 six
+importlib_resources
