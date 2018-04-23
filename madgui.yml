@@ -1,6 +1,9 @@
+runtime_path: ./runtime
 model_path: ./src/hit_models
-load_default: hht2
 
-mainwindow:
-  # adjust y-position for BeamOptikDLL banner:
-  init_pos: [0, 150]
+session_file: session.yml
+
+onload: |
+  from hit_csys.plugin import DllLoader, StubLoader
+  frame.add_online_plugin(DllLoader)
+  frame.add_online_plugin(StubLoader)
