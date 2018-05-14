@@ -1,5 +1,5 @@
 madgui-portable
-==============
+===============
 
 Folder structure and scripts for getting a portable development version of
 madgui_ for windows.
@@ -13,7 +13,6 @@ Folders
 ::
 
     bin                         Runtime libraries (Put BeamOptikDLL.dll here)
-    cache                       Downloaded installers for python packages
     lib                         Statically installed python packages
     python                      Python distributions (Extract WinPython here)
     src                         Sources for our python packages

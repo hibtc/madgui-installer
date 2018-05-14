@@ -1,2 +1,4 @@
 env.bat
 *.pyc
+lib/site-packages
+lib/wheelhouse

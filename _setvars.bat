@@ -25,7 +25,7 @@ call "%PY_DIR%\scripts\env.bat"
 :: Depend on python version/architecture
 set "PY_SRC=%MADGUI_ROOT%\src"
 set "PY_LIB=%MADGUI_ROOT%\lib\site-packages"
-set "PY_PIP=%MADGUI_ROOT%\cache\wheelhouse"
+set "PY_PIP=%MADGUI_ROOT%\lib\wheelhouse"
 
 
 :: Add 'lib' folder to PYTHONPATH, so sitecustomize.py will automatically
