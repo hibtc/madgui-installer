@@ -24,28 +24,6 @@ Folders
 Installation
 ------------
 
-Static installation
-~~~~~~~~~~~~~~~~~~~
-
-- Obtain the folder structure and utility scripts::
-
-    git clone https://github.com/hibtc/madgui-portable
-
-- Install `WinPython 3.4 Qt5`_ in its own folder under ``python/``, e.g.
-  ``python/WinPython-64bit-3.4.4.4Qt5``.
-
-- Copy runtime dependencies into ``runtime/`` (beamoptikdll).
-
-- Download and install packages::
-
-    util\install_static.bat
-
-- Good luck!
-
-
-Development version
-~~~~~~~~~~~~~~~~~~~
-
 - In *git bash*::
 
     git clone https://github.com/hibtc/madgui-portable && cd madgui-portable
@@ -56,9 +34,9 @@ Development version
 
 - Copy runtime dependencies into ``runtime/`` (beamoptikdll).
 
-- Download and install *easy* packages::
+- Download and install packages::
 
-    util\install_devel.bat
+    util\setup.bat
 
 .. _WinPython 3.4 Qt5: https://winpython.github.io/
 
