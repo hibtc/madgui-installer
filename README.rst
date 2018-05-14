@@ -25,12 +25,14 @@ Installation
     git clone https://github.com/hibtc/madgui-portable && cd madgui-portable
     git submodule update --init -j 2
 
-- Install `WinPython 3.4 Qt5`_ in the same directory as madgui, e.g.::
-
-    ./WinPython-64bit-3.4.4.4Qt5
-    ./madgui-portable
+- Install `WinPython 3.4 Qt5`_ alongside madgui or in ``bin/``
 
 - Copy runtime dependencies into ``bin/`` (beamoptikdll).
+
+- Add ``env.bat`` file that is responsible to activate the python environment,
+  e.g.::
+
+    call "%~dp0..\WinPython-64bit-3.4.4.4Qt5\scripts\env.bat"
 
 - Download and install packages::
 
