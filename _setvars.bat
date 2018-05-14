@@ -7,7 +7,7 @@ set "MADGUI_ROOT=%~dp0"
 
 
 :: Make sure BeamOptikDLL.dll and other scripts can be found later on:
-set "PATH=%MADGUI_ROOT%\bin;%MADGUI_ROOT%\runtime;%PATH%"
+set "PATH=%MADGUI_ROOT%\bin;%PATH%"
 
 
 :: Add python to PATH:

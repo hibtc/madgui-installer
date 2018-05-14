@@ -12,11 +12,10 @@ Folders
 
 ::
 
-    bin                         Binaries installed by python packages
+    bin                         Runtime libraries (Put BeamOptikDLL.dll here)
     cache                       Downloaded installers for python packages
     lib                         Statically installed python packages
     python                      Python distributions (Extract WinPython here)
-    runtime                     Runtime libraries (Put BeamOptikDLL.dll here)
     src                         Sources for our python packages
 
 
@@ -31,7 +30,7 @@ Installation
 - Install `WinPython 3.4 Qt5`_ in its own folder under ``python/``, e.g.
   ``python/WinPython-64bit-3.4.4.4Qt5``.
 
-- Copy runtime dependencies into ``runtime/`` (beamoptikdll).
+- Copy runtime dependencies into ``bin/`` (beamoptikdll).
 
 - Download and install packages::
 
