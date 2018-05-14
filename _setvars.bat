@@ -13,7 +13,7 @@ set "PATH=%MADGUI_ROOT%\bin;%PATH%"
 :: Add python to PATH:
 if not defined PY_ARCH set "PY_ARCH=64"
 if not defined PY_VER  set "PY_VER=3.4"
-if not defined PY_ROOT set "PY_ROOT=%MADGUI_ROOT%\python"
+if not defined PY_ROOT set "PY_ROOT=%MADGUI_ROOT%\.."
 if not defined PY_DIR (
     for /f "tokens=*" %%A in ('dir /b /a:d /o:n "%PY_ROOT%\WinPython-%PY_ARCH%bit-%PY_VER%.*"') do (
         set "PY_DIR=%PY_ROOT%\%%A"

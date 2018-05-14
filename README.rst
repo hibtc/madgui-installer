@@ -14,7 +14,6 @@ Folders
 
     bin                         Runtime libraries (Put BeamOptikDLL.dll here)
     lib                         Statically installed python packages
-    python                      Python distributions (Extract WinPython here)
     src                         Sources for our python packages
 
 
@@ -26,8 +25,10 @@ Installation
     git clone https://github.com/hibtc/madgui-portable && cd madgui-portable
     git submodule update --init -j 2
 
-- Install `WinPython 3.4 Qt5`_ in its own folder under ``python/``, e.g.
-  ``python/WinPython-64bit-3.4.4.4Qt5``.
+- Install `WinPython 3.4 Qt5`_ in the same directory as madgui, e.g.::
+
+    ./WinPython-64bit-3.4.4.4Qt5
+    ./madgui-portable
 
 - Copy runtime dependencies into ``bin/`` (beamoptikdll).
 
