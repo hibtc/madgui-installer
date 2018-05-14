@@ -14,7 +14,7 @@ pip install --target "%PY_LIB%" --find-links "%PY_PIP%" ^
     -r "%MADGUI_ROOT%\requirements.txt"
 
 :: Generate the .egg_info to add the packages
-cd %PY_SRC%\madgui   && python setup.py egg_info
-cd %PY_SRC%\hit_csys && python setup.py egg_info
+cd "%PY_SRC%\madgui"   && python setup.py egg_info
+cd "%PY_SRC%\hit_csys" && python setup.py egg_info
 
 pause
