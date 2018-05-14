@@ -26,9 +26,9 @@ call "%PY_DIR%\scripts\env.bat"
 
 :: Depend on python version/architecture
 set PY_SRC=%MADGUI_ROOT%\src
-set PY_LIB=%MADGUI_ROOT%\lib\python%PY_VER%-%PY_ARCH%bit
-set PY_PIP=%MADGUI_ROOT%\cache\python%PY_VER%-%PY_ARCH%bit
-set MADX_BIN=%MADGUI_ROOT%\bin\madx%PY_ARCH%
+set PY_LIB=%MADGUI_ROOT%\lib\site-packages
+set PY_PIP=%MADGUI_ROOT%\cache\wheelhouse
+set MADX_BIN=%MADGUI_ROOT%\bin\madx
 
 
 :: Add 'lib' folder to PYTHONPATH, so sitecustomize.py will automatically
