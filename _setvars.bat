@@ -1,3 +1,4 @@
+@echo off
 :: This script is called from other scripts to activate the python environment.
 
 :: First load user custom config
@@ -34,3 +35,5 @@ if DEFINED PYTHONPATH (
 ) ELSE (
     set PYTHONPATH=%MADGUI_ROOT%\lib
 )
+
+echo on
