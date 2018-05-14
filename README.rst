@@ -60,22 +60,7 @@ Development version
 
     util\install_devel.bat
 
-- You *can* use a prebuilt version of cpymad_ (much faster but not installed
-  in development mode)::
-
-    util\download_cpymad.bat
-
-- Otherwise, first install a recent version of cmake_ and then build and
-  install cpymad as follows::
-
-    git clone https://github.com/MethodicalAcceleratorDesign/MAD-X src/MAD-X -b 5.03.07
-
-    util\build_madx.bat
-    util\build_cpymad.bat
-
 .. _WinPython 3.4 Qt5: https://winpython.github.io/
-.. _cpymad: https://pypi.python.org/pypi/cpymad/
-.. _cmake: https://cmake.org/
 
 
 Usage

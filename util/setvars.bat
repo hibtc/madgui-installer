@@ -9,7 +9,7 @@ set MADGUI_ROOT=%_BASE%
 
 
 :: Make sure BeamOptikDLL.dll and other scripts can be found later on:
-set PATH="%MADGUI_ROOT%\bin";"%MADGUI_ROOT%\runtime";"%MADX_BIN%\bin";%PATH%
+set PATH="%MADGUI_ROOT%\bin";"%MADGUI_ROOT%\runtime"";%PATH%
 
 
 :: Add python to PATH:
@@ -28,7 +28,6 @@ call "%PY_DIR%\scripts\env.bat"
 set PY_SRC=%MADGUI_ROOT%\src
 set PY_LIB=%MADGUI_ROOT%\lib\site-packages
 set PY_PIP=%MADGUI_ROOT%\cache\wheelhouse
-set MADX_BIN=%MADGUI_ROOT%\bin\madx
 
 
 :: Add 'lib' folder to PYTHONPATH, so sitecustomize.py will automatically

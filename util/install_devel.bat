@@ -1,6 +1,7 @@
 :: Install madgui in development-mode
 @echo off
 call "%~dp0\setvars"
+if not exist "%PY_LIB%" ( mkdir "%PY_LIB%" )
 if not exist "%PY_PIP%" ( mkdir "%PY_PIP%" )
 echo on
 
@@ -8,7 +9,7 @@ echo on
 pip download -d "%PY_PIP%" ^
     -r "%MADGUI_ROOT%\util\requirements.txt"
 
-:: Install common python packages
+:: Install dependencies and cpymad
 pip install --target "%PY_LIB%" --find-links "%PY_PIP%" ^
     -r "%MADGUI_ROOT%\util\requirements.txt"
 
@@ -16,9 +17,5 @@ pip install --target "%PY_LIB%" --find-links "%PY_PIP%" ^
 cd %PY_SRC%\minrpc   && python setup.py egg_info
 cd %PY_SRC%\madgui   && python setup.py egg_info
 cd %PY_SRC%\hit_csys && python setup.py egg_info
-
-:: Please do the following manually if needed:
-::  "%MADGUI_ROOT%\util\build_madx.bat"
-::  "%MADGUI_ROOT%\util\build_cpymad.bat"
 
 pause
