@@ -1,20 +1,15 @@
 :: Install madgui in development-mode
-@echo off
-call "%~dp0\_setvars"
-if not exist "%PY_LIB%" ( mkdir "%PY_LIB%" )
-if not exist "%PY_PIP%" ( mkdir "%PY_PIP%" )
-echo on
+@call "%~dp0\_setvars"
 
 :: First download everything (can be used for offline installation later):
 pip download -d "%PY_PIP%" ^
     -r "%MADGUI_ROOT%\requirements.txt"
 
-:: Install dependencies and cpymad
+:: Install dependencies
 pip install --target "%PY_LIB%" --find-links "%PY_PIP%" ^
     -r "%MADGUI_ROOT%\requirements.txt"
 
-:: Generate the .egg_info to add the packages
+:: Now install madgui itself
 cd "%PY_SRC%\madgui"   && python setup.py egg_info
 cd "%PY_SRC%\hit_csys" && python setup.py egg_info
-
 pause
