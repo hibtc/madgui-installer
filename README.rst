@@ -29,8 +29,8 @@ Installation
 
 - Copy runtime dependencies into ``bin/`` (beamoptikdll).
 
-- Add ``env.bat`` file that is responsible to activate the python environment,
-  e.g.::
+- Add ``env.bat`` file in ``bin/`` that is responsible to activate the python
+  environment, e.g.::
 
     call "%~dp0..\WinPython-64bit-3.4.4.4Qt5\scripts\env.bat"
 

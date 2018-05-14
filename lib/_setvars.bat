@@ -5,7 +5,7 @@
 for %%a in (%~dp0..) do set "MADGUI_ROOT=%%~fa"
 
 :: Load user custom config
-if exist "%~dp0..\env.bat" call "%~dp0..\env.bat"
+if exist "%~dp0..\bin\env.bat" call "%~dp0..\bin\env.bat"
 
 :: Depend on python version/architecture
 set "PY_SRC=%MADGUI_ROOT%\src"
