@@ -1,6 +1,2 @@
-@echo off
-call "%~dp0\util\setvars"
+@call "%~dp0\lib\_setvars"
 python %*
-if ERRORLEVEL 1 (
-    pause
-)

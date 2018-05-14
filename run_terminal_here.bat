@@ -1,3 +1,2 @@
-@echo off
-call "%~dp0\util\setvars"
+@call "%~dp0\lib\_setvars"
 cmd %*

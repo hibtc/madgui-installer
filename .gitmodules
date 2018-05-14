@@ -1,15 +1,3 @@
-[submodule "minrpc"]
-	path = src/minrpc
-	url = git@github.com:hibtc/minrpc
-[submodule "cpymad"]
-	path = src/cpymad
-	url = git@github.com:hibtc/cpymad
-[submodule "madseq"]
-	path = src/madseq
-	url = git@github.com:hibtc/madseq
-[submodule "pytao"]
-	path = src/pytao
-	url = git@github.com:hibtc/pytao
 [submodule "madgui"]
 	path = src/madgui
 	url = git@github.com:hibtc/madgui

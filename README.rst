@@ -1,5 +1,5 @@
 madgui-portable
-==============
+===============
 
 Folder structure and scripts for getting a portable development version of
 madgui_ for windows.
@@ -12,70 +12,33 @@ Folders
 
 ::
 
-    bin                         Binaries installed by python packages
-    cache                       Downloaded installers for python packages
+    bin                         Runtime libraries (Put BeamOptikDLL.dll here)
     lib                         Statically installed python packages
-    python                      Python distributions (Extract WinPython here)
-    runtime                     Runtime libraries (Put BeamOptikDLL.dll here)
     src                         Sources for our python packages
-    util                        Install scripts and utilities
 
 
 Installation
 ------------
-
-Static installation
-~~~~~~~~~~~~~~~~~~~
-
-- Obtain the folder structure and utility scripts::
-
-    git clone https://github.com/hibtc/madgui-portable
-
-- Install `WinPython 3.4 Qt5`_ in its own folder under ``python/``, e.g.
-  ``python/WinPython-64bit-3.4.4.4Qt5``.
-
-- Copy runtime dependencies into ``runtime/`` (beamoptikdll).
-
-- Download and install packages::
-
-    util\install_static.bat
-
-- Good luck!
-
-
-Development version
-~~~~~~~~~~~~~~~~~~~
 
 - In *git bash*::
 
     git clone https://github.com/hibtc/madgui-portable && cd madgui-portable
     git submodule update --init -j 2
 
-- Install `WinPython 3.4 Qt5`_ in its own folder under ``python/``, e.g.
-  ``python/WinPython-64bit-3.4.4.4Qt5``.
+- Install `WinPython 3.4 Qt5`_ alongside madgui or in ``bin/``
 
-- Copy runtime dependencies into ``runtime/`` (beamoptikdll).
+- Copy runtime dependencies into ``bin/`` (beamoptikdll).
 
-- Download and install *easy* packages::
+- Add ``env.bat`` file in ``bin/`` that is responsible to activate the python
+  environment, e.g.::
 
-    util\install_devel.bat
+    call "%~dp0..\WinPython-64bit-3.4.4.4Qt5\scripts\env.bat"
 
-- You *can* use a prebuilt version of cpymad_ (much faster but not installed
-  in development mode)::
+- Download and install packages::
 
-    util\download_cpymad.bat
-
-- Otherwise, first install a recent version of cmake_ and then build and
-  install cpymad as follows::
-
-    git clone https://github.com/MethodicalAcceleratorDesign/MAD-X src/MAD-X -b 5.03.07
-
-    util\build_madx.bat
-    util\build_cpymad.bat
+    setup.bat
 
 .. _WinPython 3.4 Qt5: https://winpython.github.io/
-.. _cpymad: https://pypi.python.org/pypi/cpymad/
-.. _cmake: https://cmake.org/
 
 
 Usage
@@ -90,7 +53,7 @@ Troubleshooting
 - Python 3.5 is not yet supported for `technical reasons`_.
 
 - If you use anything else but WinPython 3.4, you have to modify
-  ``setvars.bat`` accordingly (or you may put values into ``env.bat``)!
+  ``_setvars.bat`` accordingly (or you may put values into ``env.bat``)!
 
 - Make sure to use the *Qt* not the *zero* versions of WinPython
 
