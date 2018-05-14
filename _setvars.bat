@@ -1,11 +1,8 @@
 :: This script is called from other scripts to activate the python environment.
 
 :: First load user custom config
-if exist "%~dp0..\env.bat" call "%~dp0..\env.bat"
-
-:: Determine path of parent folder:
-for %%a in (%~dp0..) do set _BASE=%%~fa
-set MADGUI_ROOT=%_BASE%
+if exist "%~dp0\env.bat" call "%~dp0\env.bat"
+set MADGUI_ROOT=%~dp0
 
 
 :: Make sure BeamOptikDLL.dll and other scripts can be found later on:

@@ -1,5 +1,5 @@
 @echo off
-call "%~dp0\util\setvars"
+call "%~dp0\_setvars"
 python -m madgui %*
 if ERRORLEVEL 1 (
     pause

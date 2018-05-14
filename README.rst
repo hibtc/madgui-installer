@@ -18,7 +18,6 @@ Folders
     python                      Python distributions (Extract WinPython here)
     runtime                     Runtime libraries (Put BeamOptikDLL.dll here)
     src                         Sources for our python packages
-    util                        Install scripts and utilities
 
 
 Installation
@@ -36,7 +35,7 @@ Installation
 
 - Download and install packages::
 
-    util\setup.bat
+    setup.bat
 
 .. _WinPython 3.4 Qt5: https://winpython.github.io/
 
@@ -53,7 +52,7 @@ Troubleshooting
 - Python 3.5 is not yet supported for `technical reasons`_.
 
 - If you use anything else but WinPython 3.4, you have to modify
-  ``setvars.bat`` accordingly (or you may put values into ``env.bat``)!
+  ``_setvars.bat`` accordingly (or you may put values into ``env.bat``)!
 
 - Make sure to use the *Qt* not the *zero* versions of WinPython
 
