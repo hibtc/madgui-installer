@@ -1,2 +1,2 @@
-@call "%~dp0\_setvars"
+@call "%~dp0\lib\_setvars"
 cmd %*
