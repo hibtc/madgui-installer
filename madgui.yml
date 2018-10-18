@@ -1,12 +1,9 @@
-runtime_path: ./runtime
 model_path: ./src/hit_models
-
-str_file: ../data/geradelegen-measurements-2/str40deg-E1.str
-sd_file: ../data/geradelegen-measurements-2/mon40deg-E1.yml
-
 session_file: session.yml
+runtime_path: ./runtime
 
-onload: |
-  from hit_csys.plugin import DllLoader, StubLoader
-  frame.add_online_plugin(DllLoader)
-  frame.add_online_plugin(StubLoader)
+online_control:
+  backend: hit_csys.plugin:OnlineBackend
+  settings:
+    str_file: ../data/geradelegen-measurements-2/str40deg-E1.str
+    sd_file: ../data/geradelegen-measurements-2/mon40deg-E1.yml
