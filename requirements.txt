@@ -9,5 +9,5 @@ PyYAML
 qtconsole
 six
 importlib_resources==0.8
-cpymad==1.0.8
-minrpc==0.0.9
+cpymad==1.0.10.post1
+minrpc==0.0.10
