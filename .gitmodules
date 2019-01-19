@@ -4,6 +4,6 @@
 [submodule "hit_models"]
 	path = src/hit_models
 	url = git@github.com:hibtc/hit_models
-[submodule "hit_csys"]
-	path = src/hit_csys
-	url = git@github.com:hibtc/hit_csys
+[submodule "hit_acs"]
+	path = src/hit_acs
+	url = git@github.com:hibtc/hit_acs
