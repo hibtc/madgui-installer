@@ -7,5 +7,5 @@ pip install --target "%PY_LIB%" --find-links "%PY_PIP%" ^
 
 :: Now install madgui itself
 cd "%PY_SRC%\madgui"   && python setup.py egg_info
-cd "%PY_SRC%\hit_csys" && python setup.py egg_info
+cd "%PY_SRC%\hit_acs"  && python setup.py egg_info
 pause
