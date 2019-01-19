@@ -3,11 +3,13 @@ docutils
 ipython
 numpy
 matplotlib
+pandas
+scipy
 pint
 pydicti
 PyYAML
 qtconsole
 six
 importlib_resources==0.8
-cpymad==1.0.10.post1
+cpymad==1.0.11
 minrpc==0.0.10
