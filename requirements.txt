@@ -1,8 +1,8 @@
 docopt
 docutils
 ipython
-numpy
-matplotlib
+numpy==1.15
+matplotlib<3.0
 pandas
 scipy
 pint
