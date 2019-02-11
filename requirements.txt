@@ -13,3 +13,5 @@ six
 importlib_resources==0.8
 cpymad==1.0.11
 minrpc==0.0.10
+madgui==19.01.0
+hit_acs==19.01.0

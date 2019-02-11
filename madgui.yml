@@ -1,4 +1,4 @@
-model_path: ./src/hit_models
+model_path: ./hit_models
 session_file: session.yml
 runtime_path: ./runtime
 

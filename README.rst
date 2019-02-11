@@ -13,7 +13,6 @@ Folders
 ::
 
     lib                         Statically installed python packages
-    src                         Sources for our python packages
 
 
 Installation

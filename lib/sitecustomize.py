@@ -6,8 +6,6 @@ list of site-directories. This will make the packages therein importable.
 
 import os
 import site
-import sys
 
 this_dir = os.path.dirname(__file__)
 site.addsitedir(os.path.join(this_dir, 'site-packages'))
-site.addsitedir(os.path.join(this_dir, '..', 'src'))
