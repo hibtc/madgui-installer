@@ -72,6 +72,7 @@ following tools to craft a portable application:
 
 - PyInstaller_ (cross-platform)
 - cx_Freeze_ (cross-platform)
+- nuitka_ (cross-platform)
 - py2exe_ (windows)
 - py2app_ (Mac OS X)
 
@@ -79,6 +80,7 @@ following tools to craft a portable application:
 .. _cx_Freeze: http://cx-freeze.sourceforge.net/
 .. _py2exe: http://www.py2exe.org/
 .. _py2app: http://pythonhosted.org/py2app/
+.. _nuitka: http://nuitka.net
 
 If you succeed in using one of those tools, you are welcome to contribute a
 short guide here.
