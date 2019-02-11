@@ -1,7 +1,7 @@
 madgui-portable
 ===============
 
-Folder structure and scripts for getting a portable development version of
+Folder structure and scripts for deploying a portable development version of
 madgui_ for windows.
 
 .. _madgui: https://github.com/hibtc/madgui
@@ -12,7 +12,6 @@ Folders
 
 ::
 
-    bin                         Runtime libraries (Put BeamOptikDLL.dll here)
     lib                         Statically installed python packages
     src                         Sources for our python packages
 
@@ -25,18 +24,23 @@ Installation
     git clone https://github.com/hibtc/madgui-portable && cd madgui-portable
     git submodule update --init -j 2
 
-- Install `WinPython 3.4 Qt5`_ alongside madgui or in ``bin/``
+- Install python3 (e.g. `WinPython 3.4 Qt5`_) alongside/into madgui folder
 
-- Copy runtime dependencies into ``bin/`` (beamoptikdll).
+- Copy runtime dependencies such as beamoptikdll alongside/into madgui folder
 
-- Add ``env.bat`` file in ``bin/`` that is responsible to activate the python
-  environment, e.g.::
+- Add an ``env.bat`` file in the root folder that activates the python
+  environment, and add beamoptikdll to PATH, e.g.::
 
     call "%~dp0..\WinPython-64bit-3.4.4.4Qt5\scripts\env.bat"
+    set "PATH=%~dp0..\beamoptikdll;%PATH%"
 
-- Download and install packages::
+- Download packages for later installation::
 
-    setup.bat
+    setup_download.bat
+
+- Install packages (can be done offline)::
+
+    setup_install.bat
 
 .. _WinPython 3.4 Qt5: https://winpython.github.io/
 
@@ -45,23 +49,6 @@ Usage
 -----
 
 Double-click on ``run_madgui.bat``.
-
-
-Troubleshooting
----------------
-
-- Python 3.5 is not yet supported for `technical reasons`_.
-
-- If you use anything else but WinPython 3.4, you have to modify
-  ``_setvars.bat`` accordingly (or you may put values into ``env.bat``)!
-
-- Make sure to use the *Qt* not the *zero* versions of WinPython
-
-- In case of problems with cpymad, refer to the `cpymad installation
-  instructions`_.
-
-.. _technical reasons: https://github.com/hibtc/cpymad/issues/32
-.. _cpymad installation instructions: http://hibtc.github.io/cpymad/installation/windows.html
 
 
 Alternatives
