@@ -25,6 +25,10 @@ Installation
 
 - Install python3 (e.g. `WinPython 3.4 Qt5`_) alongside/into madgui folder
 
+- Activate a build environment with mingw and type::
+
+    make
+
 - Copy runtime dependencies such as beamoptikdll alongside/into madgui folder
 
 - Add an ``env.bat`` file in the root folder that activates the python
