@@ -2,4 +2,5 @@
 site-packages
 wheelhouse
 *.exe
+*.res
 py3*
