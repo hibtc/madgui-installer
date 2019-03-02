@@ -56,12 +56,14 @@ Alternatives
 It may be more reliable and require less manual labour to use one of the
 following tools to craft a portable application:
 
+- pyqtdeploy_ (cross-platform)
 - PyInstaller_ (cross-platform)
 - cx_Freeze_ (cross-platform)
 - nuitka_ (cross-platform)
 - py2exe_ (windows)
 - py2app_ (Mac OS X)
 
+.. _pyqtdeploy: http://pyqt.sourceforge.net/Docs/pyqtdeploy/
 .. _PyInstaller: http://www.pyinstaller.org/
 .. _cx_Freeze: http://cx-freeze.sourceforge.net/
 .. _py2exe: http://www.py2exe.org/
