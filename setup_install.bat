@@ -1,6 +1,7 @@
 @call "%~dp0\activate.bat"
 
-pip install --target "%PY_LIB%" --find-links "%PY_PIP%" ^
+pip install -t "%PY_LIB%" ^
+    -f "%PY_PIP%" --no-index ^
     -r "%MADGUI_ROOT%\requirements.txt"
 
 pause
