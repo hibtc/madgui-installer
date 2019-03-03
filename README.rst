@@ -12,8 +12,9 @@ Installation
 
 - In *git bash*::
 
-    git clone https://github.com/hibtc/madgui-portable && cd madgui-portable
-    git submodule update --init -j 2
+    git clone https://github.com/hibtc/madgui-portable
+    cd madgui-portable
+    git clone https://github.com/hibtc/hit_models
 
 - Install python3 (e.g. `WinPython 3.4 Qt5`_) alongside/into madgui folder
 
