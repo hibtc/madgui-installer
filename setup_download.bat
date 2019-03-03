@@ -1,4 +1,4 @@
-@call "%~dp0\_setvars"
+@call "%~dp0\activate.bat"
 
 :: Download everything (can be used for offline installation later):
 pip download -d "%PY_PIP%" ^
