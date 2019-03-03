@@ -7,14 +7,6 @@ madgui_ for windows.
 .. _madgui: https://github.com/hibtc/madgui
 
 
-Folders
--------
-
-::
-
-    lib                         Statically installed python packages
-
-
 Installation
 ------------
 
