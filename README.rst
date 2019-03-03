@@ -16,15 +16,19 @@ Installation
     cd madgui-portable
     git clone https://github.com/hibtc/hit_models
 
-- Install python3 (e.g. `WinPython 3.4 Qt5`_) alongside/into madgui folder
+- Install python 3.7 (or later) alongside/into madgui folder
+
+- Activate a build environment with mingw and type::
+
+    make
 
 - Copy runtime dependencies such as beamoptikdll alongside/into madgui folder
 
 - Add an ``env.bat`` file in the root folder that activates the python
   environment, and add beamoptikdll to PATH, e.g.::
 
-    call "%~dp0..\WinPython-64bit-3.4.4.4Qt5\scripts\env.bat"
     set "PATH=%~dp0..\beamoptikdll;%PATH%"
+    set "PATH=%~dp0..\python3.7;%PATH%"
 
 - Download packages for later installation::
 
@@ -33,8 +37,6 @@ Installation
 - Install packages (can be done offline)::
 
     setup_install.bat
-
-.. _WinPython 3.4 Qt5: https://winpython.github.io/
 
 
 Usage
