@@ -1,7 +1,7 @@
 @call "%~dp0\activate.bat"
 
-pip install -t "%PY_LIB%" ^
-    -f "%PY_PIP%" --no-index ^
-    -r "%MADGUI_ROOT%\requirements.txt"
+pip install -t "%~dp0\site-packages" ^
+    -f "%~dp0\wheels" --no-index ^
+    -r "%~dp0\requirements.txt"
 
 pause

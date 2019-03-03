@@ -24,11 +24,8 @@ Installation
 
 - Copy runtime dependencies such as beamoptikdll alongside/into madgui folder
 
-- Add an ``env.bat`` file in the root folder that activates the python
-  environment, and add beamoptikdll to PATH, e.g.::
-
-    set "PATH=%~dp0..\beamoptikdll;%PATH%"
-    set "PATH=%~dp0..\python3.7;%PATH%"
+- Modify ``activate.bat`` file in the root folder for the correct python and
+  beamoptikdll pathes.
 
 - Download packages for later installation::
 
