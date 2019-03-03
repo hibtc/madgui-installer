@@ -10,9 +10,6 @@ typedef int (*Py_Main_T)(int, wchar_t**);
 #ifndef PYDLL
 # define PYDLL          "python37.dll"
 #endif
-#ifndef PYTHONHOME
-# define PYTHONHOME     "Z:\\tools\\madgui\\python\\WinPython64-3.7.1.0\\python-3.7.1.amd64"
-#endif
 
 
 void ActivateEnvironment();
@@ -50,15 +47,36 @@ int WINAPI WinMain(
 // activate python environment
 void ActivateEnvironment()
 {
+    const char* PYTHONHOME = getenv("PYTHONHOME");
     const char* PYTHONPATH = GetExeFolder();
+
+    if (!PYTHONHOME || !*PYTHONHOME) {
+        wchar_t* lpCommandLine = StrConcatW(
+                L"cmd.exe /C /MIN call activate.bat && start \"madgui\" ",
+                GetCommandLineW())
+
+        STARTUPINFO si = {0};
+        PROCESS_INFORMATION pi = {0};
+        si.cb = sizeof(si);
+        si.dwFlags = STARTF_USESHOWWINDOW;
+        si.wShowWindow = SW_HIDE;
+
+        CreateProcess(
+                NULL, lpCommandLine,
+                NULL, NULL,             // security attributes
+                TRUE,                   // bInheritHandles
+                0,                      // dwCreationFlags
+                NULL,                   // lpEnvironment
+                GetExeFolder(),         // lpCurrentDirectory
+                &si, &pi);
+
+        WaitForSingleObject(si.hProcess, INFINITE);
+
+        ExitProcess(0);
+    }
 
     // enable LoadLibrary to find pythonXX.dll:
     AddEnvironmentPath("PATH", PYTHONHOME);
-
-    // enable python interpreter to find stdlib:
-    // otherwise you may get errors as in
-    // https://stackoverflow.com/questions/5694706/py-initialize-fails
-    SetEnvironmentVariable("PYTHONHOME", PYTHONHOME);
 
     // enable python interpreter to find madgui/etc:
     AddEnvironmentPath("PYTHONPATH", PYTHONPATH);
