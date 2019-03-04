@@ -18,6 +18,7 @@ call %gcc% -c activate.c
 call %gcc% -o python.exe python.c activate.o
 
 call %windres% madgui.rc -O coff -o madgui.res
-call %gcc% -o madgui.exe madgui.c madgui.res activate.o
+call %gcc% -o madgui.exe -DMODULE=madgui launcher.c madgui.res activate.o
+call %gcc% -o beamopt.exe -DMODULE=hit_acs.gui_qt launcher.c activate.o
 
 call makensis madgui.nsi
