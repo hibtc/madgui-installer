@@ -7,8 +7,9 @@ for /f %%G in ('python -c "import sys; print(sys.prefix)"') do (
 )
 
 :: Install py37 for site-packages:
-call conda create -n py37_build -qyf python=3.7 wheel nsis
+call conda create -n py37_build -qyf python=3.7 wheel
 call conda activate py37_build
+call conda install -qyf nsis -c nsis
 call pip wheel -w "%~dp0\wheelhouse" -r "%~dp0\requirements.txt"
 call pip install -t "%~dp0\site-packages" -r "%~dp0\requirements.txt" ^
     -f "%~dp0\wheelhouse" --no-index
