@@ -1,53 +1,39 @@
-madgui-portable
-===============
+madgui-installer
+================
 
-Folder structure and scripts for deploying a portable development version of
-madgui_ for windows.
+Scripts for creating a madgui_ installer on windows.
 
 .. _madgui: https://github.com/hibtc/madgui
-
-
-Installation
-------------
-
-- In *git bash*::
-
-    git clone https://github.com/hibtc/madgui-portable
-    cd madgui-portable
-    git clone https://github.com/hibtc/hit_models
-
-- Install python 3.7 (or later) alongside/into madgui folder
-
-- Activate a build environment with mingw and type::
-
-    make
-
-- Copy runtime dependencies such as beamoptikdll alongside/into madgui folder
-
-- Modify ``activate.bat`` file in the root folder for the correct python and
-  beamoptikdll pathes.
-
-- Download packages for later installation::
-
-    setup_download.bat
-
-- Install packages (can be done offline)::
-
-    setup_install.bat
 
 
 Usage
 -----
 
-Double-click on ``run_madgui.bat``.
+Install miniconda_ (or anaconda) and open a conda terminal. Navigate to this
+folder and execute::
+
+    make
+
+.. _miniconda: https://docs.conda.io/en/latest/miniconda.html
+
+This works for a while to finally create a ``madgui_X.X.X_setup.exe`` that can
+be used to install madgui on another machine.
+
+There is one notable limitation: the installer currently does not include a
+python installation and hence python 3.7 must be installed on the target
+machine beforehand.
+
+Next, copy runtime dependencies such as beamoptikdll into the madgui folder.
 
 
-Alternatives
-------------
+Future directions
+-----------------
 
-It may be more reliable and require less manual labour to use one of the
-following tools to craft a portable application:
+The installer currently creates something akin a *poor man's* virtual
+environment on the target system. It is probably better to use an existing
+solution instead. Possible candidates are
 
+- venv_ (stdlib)
 - pyqtdeploy_ (cross-platform)
 - PyInstaller_ (cross-platform)
 - cx_Freeze_ (cross-platform)
@@ -55,6 +41,7 @@ following tools to craft a portable application:
 - py2exe_ (windows)
 - py2app_ (Mac OS X)
 
+.. _venv: https://docs.python.org/3/library/venv.html
 .. _pyqtdeploy: http://pyqt.sourceforge.net/Docs/pyqtdeploy/
 .. _PyInstaller: http://www.pyinstaller.org/
 .. _cx_Freeze: http://cx-freeze.sourceforge.net/
