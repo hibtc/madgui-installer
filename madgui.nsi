@@ -18,10 +18,6 @@ Section
     File "python.exe"
     File "madgui.exe"
     File "beamopt.exe"
-    File "run_beamoptikdll.bat"
-    File "run_madgui.bat"
-    File "run_python_here.bat"
-    File "run_terminal_here.bat"
     File "sitecustomize.py"
 
     SetOutPath "$INSTDIR\site-packages"
