@@ -4,10 +4,15 @@ InstallDir "Z:\tools\madgui\madgui_19.1.0"
 
 Var PYTHONHOME
 
+Function initPythonHome
+    ReadINIStr $PYTHONHOME $INSTDIR\activate.ini python home
+FunctionEnd
+
 Page directory
 PageEx directory
     DirText "Help us find the python 3.7 installation for running madgui:" "Where is python 3.7 installed?"
     DirVar $PYTHONHOME
+    PageCallbacks initPythonHome
 PageExEnd
 Page instfiles
 
