@@ -22,8 +22,11 @@ Section
     File "run_python_here.bat"
     File "run_terminal_here.bat"
     File "sitecustomize.py"
-    File /r "site-packages"
 
+    SetOutPath "$INSTDIR\site-packages"
+    File /r "site-packages\*"
+
+    SetOutPath $INSTDIR
     FileOpen $4 "activate.bat" w
     FileWrite $4 "set $\"PATH=$PYTHONHOME;%PATH%$\"$\r$\n"
     FileWrite $4 "set $\"PATH=$PYTHONHOME\Scripts;%PATH%$\"$\r$\n"
