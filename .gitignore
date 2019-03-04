@@ -1,5 +1,4 @@
 *.pyc
 site-packages
 wheelhouse
-session.yml
-data
+*.exe
