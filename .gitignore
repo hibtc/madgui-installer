@@ -3,4 +3,5 @@ site-packages
 wheelhouse
 *.exe
 *.res
+*.o
 py3*

@@ -34,4 +34,11 @@ Section
     FileWrite $4 "set $\"PYTHONHOME=$PYTHONHOME$\"$\r$\n"
     FileWrite $4 "set $\"PYTHONPATH=$INSTDIR$\"$\r$\n"
     FileClose $4
+
+    FileOpen $4 "activate.ini" w
+    FileWrite $4 "[python]$\r$\n"
+    FileWrite $4 "home=$PYTHONHOME$\r$\n"
+    FileWrite $4 "load=python37.dll$\r$\n"
+    FileWrite $4 "extra=$INSTDIR\..\beamoptikdll$\r$\n"
+    FileClose $4
 SectionEnd
