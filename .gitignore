@@ -1,6 +1,5 @@
-env.bat
 *.pyc
-lib/site-packages
-lib/wheelhouse
+site-packages
+wheelhouse
 session.yml
 data
