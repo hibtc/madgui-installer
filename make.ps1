@@ -1,3 +1,7 @@
+# On some machines required to make HTTPS work:
+[Net.ServicePointManager]::Expect100Continue = $true;
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;
+
 # Download embeddable python:
 $zip = "python-3.7.2.post1-embed-amd64.zip"
 $url = "https://www.python.org/ftp/python/3.7.2/$zip"
