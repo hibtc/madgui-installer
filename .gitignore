@@ -1,6 +1,8 @@
 *.pyc
+python-*
 site-packages
 wheelhouse
+*.zip
 *.exe
 *.res
 *.o

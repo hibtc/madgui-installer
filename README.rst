@@ -19,9 +19,9 @@ folder and execute::
 This works for a while to finally create a ``madgui_X.X.X_setup.exe`` that can
 be used to install madgui on another machine.
 
-There is one notable limitation: the installer currently does not include a
-python installation and hence python 3.7 must be installed on the target
-machine beforehand.
+The installer allows to either install a small python distribution alongside
+madgui (recommended), or choose an existing python 3.7 installation on the
+host.
 
 Next, copy runtime dependencies such as beamoptikdll into the madgui folder.
 
