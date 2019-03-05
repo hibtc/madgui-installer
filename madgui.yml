@@ -4,6 +4,3 @@ runtime_path: ./runtime
 
 online_control:
   backend: hit_acs.plugin:HitACS
-  settings:
-    str_file: ../data/geradelegen-measurements-2/str40deg-E1.str
-    sd_file: ../data/geradelegen-measurements-2/mon40deg-E1.yml
