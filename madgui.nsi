@@ -35,7 +35,6 @@ Section "madgui"
     FileOpen $4 "activate.bat" w
     FileWrite $4 "set $\"PATH=$PYTHONHOME;%PATH%$\"$\r$\n"
     FileWrite $4 "set $\"PATH=$PYTHONHOME\Scripts;%PATH%$\"$\r$\n"
-    FileWrite $4 "set $\"PATH=$INSTDIR\..\beamoptikdll;%PATH%$\"$\r$\n"
     FileWrite $4 "set $\"PYTHONHOME=$PYTHONHOME$\"$\r$\n"
     FileWrite $4 "set $\"PYTHONPATH=$INSTDIR$\"$\r$\n"
     FileClose $4
@@ -44,7 +43,6 @@ Section "madgui"
     FileWrite $4 "[python]$\r$\n"
     FileWrite $4 "home=$PYTHONHOME$\r$\n"
     FileWrite $4 "load=python${pythonVersion}.dll$\r$\n"
-    FileWrite $4 "extra=$INSTDIR\..\beamoptikdll$\r$\n"
     FileClose $4
 
     SetOutPath "$INSTDIR"

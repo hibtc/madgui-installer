@@ -4,3 +4,7 @@ runtime_path: ./runtime
 
 online_control:
   backend: hit_acs.plugin:HitACS
+
+onload: |
+  import sys
+  sys.path.append('beamoptikdll')
