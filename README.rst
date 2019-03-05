@@ -27,7 +27,19 @@ Future directions
 
 The current method extracts a standalone python installation along with madgui
 and all dependencies in the target folder. The advantage of this method is
-that it is probably the simplest method of deployment.
+that it is probably the easiest to setup and does everything that we want:
+
+- madgui python sources are installed as plain text. This is important to
+  allow debugging and changing code! (**essential**)
+- no package conflicts with other applications (**essential**)
+- can coexist with other madgui installations
+- no activation script required
+- simple installer
+
+Before migrating to another deployment method, make sure that at least the
+first three of the above properties remain intact! A counter-example would be
+installing madgui directly as site-package of one of the python distributions
+shared with other applications.
 
 Potential alternative solutions to create a deployable madgui installation:
 
