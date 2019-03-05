@@ -3,9 +3,10 @@
 !define madguiVersion "19.1.0"
 !define pythonVersion "37"
 !define pythonEmbedDir "python-3.7.2.post1-embed-amd64"
+!define appFiles "$INSTDIR\madgui_${madguiVersion}"
 
 OutFile "madgui_${madguiVersion}_setup.exe"
-InstallDir "Z:\tools\madgui\madgui_${madguiVersion}"
+InstallDir "Z:\tools\madgui"
 
 Var PYTHONHOME
 
@@ -19,7 +20,7 @@ PageExEnd
 Page instfiles
 
 Section "madgui"
-    SetOutPath $INSTDIR
+    SetOutPath "${appFiles}"
 
     File "madgui.yml"
     File "python.exe"
@@ -27,10 +28,10 @@ Section "madgui"
     File "beamopt.exe"
     File "sitecustomize.py"
 
-    SetOutPath "$INSTDIR\site-packages"
+    SetOutPath "${appFiles}\site-packages"
     File /r "site-packages\*"
 
-    SetOutPath $INSTDIR
+    SetOutPath "${appFiles}"
     FileOpen $4 "activate.bat" w
     FileWrite $4 "set $\"PATH=$PYTHONHOME;%PATH%$\"$\r$\n"
     FileWrite $4 "set $\"PATH=$PYTHONHOME\Scripts;%PATH%$\"$\r$\n"
@@ -45,6 +46,11 @@ Section "madgui"
     FileWrite $4 "load=python${pythonVersion}.dll$\r$\n"
     FileWrite $4 "extra=$INSTDIR\..\beamoptikdll$\r$\n"
     FileClose $4
+
+    SetOutPath "$INSTDIR"
+    CreateShortCut "$INSTDIR\madgui_${madguiVersion}.lnk" "${appFiles}\madgui.exe"
+    CreateShortCut "$INSTDIR\beamopt_${madguiVersion}.lnk" "${appFiles}\beamopt.exe"
+    File "madgui.yml"
 SectionEnd
 
 Section "python" SEC_EMBED_PYTHON
@@ -54,8 +60,8 @@ SectionEnd
 
 Function initPythonHome
     ${If} ${SectionIsSelected} ${SEC_EMBED_PYTHON}
-        StrCpy $PYTHONHOME "$INSTDIR\${pythonEmbedDir}"
+        StrCpy $PYTHONHOME "${appFiles}\${pythonEmbedDir}"
         Abort
     ${EndIf}
-    ReadINIStr $PYTHONHOME $INSTDIR\activate.ini python home
+    ReadINIStr $PYTHONHOME ${appFiles}\activate.ini python home
 FunctionEnd
