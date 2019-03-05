@@ -20,12 +20,13 @@ call pip install -t "%~dp0\site-packages" -r "%~dp0\requirements.txt" ^
 
 set "gcc=py34\Scripts\gcc.exe"
 set "windres=py34\Scripts\windres.exe"
+set "cflags=-Ipy37\include"
+set "lflags=-Lpy37\libs -lpython37"
 
-call %gcc% -c activate.c
-call %gcc% -o python.exe python.c activate.o
+call %gcc% %cflags% python.c %lflags% -o python.exe
 
 call %windres% madgui.rc -O coff -o madgui.res
-call %gcc% -o madgui.exe -DMODULE=madgui launcher.c madgui.res activate.o
-call %gcc% -o beamopt.exe -DMODULE=hit_acs.gui_qt launcher.c activate.o
+call %gcc% %cflags% launcher.c %lflags% -o madgui.exe -DMODULE=madgui madgui.res
+call %gcc% %cflags% launcher.c %lflags% -o beamopt.exe -DMODULE=hit_acs.gui_qt
 
 call makensis madgui.nsi
