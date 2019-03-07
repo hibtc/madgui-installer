@@ -46,20 +46,17 @@ char* ActivateEnvironment()
     char* PYTHONHOME = GetIniString(ini_file, "python", "home", "");
     char* PYTHONAPPS = StrConcat(PYTHONHOME, "\\Scripts");
     char* PYTHON_DLL = GetIniString(ini_file, "python", "load", "python37.dll");
-    char* BEAMOPTICS = GetIniString(ini_file, "python", "extra", "");
 
     LOGS(PYTHONPATH);
     LOGS(PYTHONHOME);
     LOGS(PYTHONAPPS);
     LOGS(PYTHON_DLL);
-    LOGS(BEAMOPTICS);
 
     // Enable LoadLibrary to find pythonXX.dll:
     AddEnvironmentPath("PATH", PYTHONHOME);
 
     // Add other useful scripts:
     AddEnvironmentPath("PATH", PYTHONAPPS);
-    AddEnvironmentPath("PATH", BEAMOPTICS);
 
     // Enable python interpreter to find stdlib:
     // otherwise you may get errors as in
@@ -73,7 +70,6 @@ char* ActivateEnvironment()
     free(ini_file);
     free(PYTHONHOME);
     free(PYTHONAPPS);
-    free(BEAMOPTICS);
 
     return PYTHON_DLL;
 }

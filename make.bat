@@ -2,6 +2,13 @@
 call conda create -p py34 -qy python=3.4
 call conda activate .\py34
 call conda install -qy mingwpy -c conda-forge
+call conda install -qy 7za pywget
+
+:: Download embeddable python:
+set "DIR=python-3.7.2.post1-embed-amd64"
+set "URL=https://www.python.org/ftp/python/3.7.2/%DIR%.zip"
+call python -m wget "%URL%" -o "%DIR%.zip"
+call 7za x -y "-o%DIR%" "%DIR%.zip"
 
 :: Install py37 for site-packages:
 call conda create -p py37 -qy python=3.7 wheel
