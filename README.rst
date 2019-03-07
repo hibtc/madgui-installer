@@ -16,6 +16,11 @@ folder and execute::
 
 .. _miniconda: https://docs.conda.io/en/latest/miniconda.html
 
+There is also a powershell script that does the same. It can be executed
+using::
+
+    powershell -ExecutionPolicy Bypass -File make.ps1
+
 This works for a while to finally create a ``madgui_X.X.X_setup.exe`` that can
 be used to install madgui on another machine.
 
