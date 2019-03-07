@@ -19,19 +19,29 @@ folder and execute::
 This works for a while to finally create a ``madgui_X.X.X_setup.exe`` that can
 be used to install madgui on another machine.
 
-The installer allows to either install a small python distribution alongside
-madgui (recommended), or choose an existing python 3.7 installation on the
-host.
-
 Next, copy runtime dependencies such as beamoptikdll into the madgui folder.
 
 
 Future directions
 -----------------
 
-The installer currently creates something akin a *poor man's* virtual
-environment on the target system. It is probably better to use an existing
-solution instead. Possible candidates are
+The current method extracts a standalone python installation along with madgui
+and all dependencies in the target folder. The advantage of this method is
+that it is probably the easiest to setup and does everything that we want:
+
+- madgui python sources are installed as plain text. This is important to
+  allow debugging and changing code! (**essential**)
+- no package conflicts with other applications (**essential**)
+- can coexist with other madgui installations
+- no activation script required
+- simple installer
+
+Before migrating to another deployment method, make sure that at least the
+first three of the above properties remain intact! A counter-example would be
+installing madgui directly as site-package of one of the python distributions
+shared with other applications.
+
+Potential alternative solutions to create a deployable madgui installation:
 
 - venv_ (stdlib)
 - pyqtdeploy_ (cross-platform)
