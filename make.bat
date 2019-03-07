@@ -30,7 +30,7 @@ call %gcc% %cflags% python.c %lflags% -o pkg\python.exe         || goto :error
 
 call %windres% madgui.rc -O coff -o madgui.res                  || goto :error
 call %gcc% %cflags% launcher.c %lflags% -o pkg\madgui.exe ^
-    -DMODULE=madgui madgui.res                                  || goto :error
+    -DMODULE=madgui madgui.res -mwindows                        || goto :error
 call %gcc% %cflags% launcher.c %lflags% -o pkg\beamopt.exe ^
     -DMODULE=hit_acs.gui_qt                                     || goto :error
 

@@ -41,7 +41,7 @@ call $gcc @cflags python.c @lflags -o pkg\python.exe
 
 call $windres madgui.rc -O coff -o madgui.res
 call $gcc @cflags launcher.c @lflags -o pkg\madgui.exe `
-    "-DMODULE=madgui" madgui.res
+    "-DMODULE=madgui" -mwindows madgui.res
 call $gcc @cflags launcher.c @lflags -o pkg\beamopt.exe `
     "-DMODULE=hit_acs.gui_qt"
 
