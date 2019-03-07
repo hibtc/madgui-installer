@@ -14,9 +14,9 @@ call 7za x -y "-o%DIR%" "%DIR%.zip"
 call conda create -p py37 -qy python=3.7 wheel
 call conda activate .\py37
 call conda install -qy nsis -c nsis
-call pip wheel -w "%~dp0\wheelhouse" -r "%~dp0\requirements.txt"
-call pip install -t "%~dp0\site-packages" -r "%~dp0\requirements.txt" ^
-    -f "%~dp0\wheelhouse" --no-index
+call pip wheel -w wheelhouse -r requirements.txt
+call pip install -t site-packages -r requirements.txt ^
+    -f wheelhouse --no-index
 
 set "gcc=py34\Scripts\gcc.exe"
 set "windres=py34\Scripts\windres.exe"
