@@ -8,11 +8,7 @@
 #define EXPAND_STRINGMACRO(x) EXPAND_STR(x)
 
 
-int WINAPI WinMain(
-        HINSTANCE hInstance,
-        HINSTANCE hPrevInstance,
-        LPTSTR lpCmdLine,
-        int nCmdShow)
+void WINAPI WinMainCRTStartup()
 {
     int argc;
     wchar_t** wargv = CommandLineToArgvW(
@@ -26,5 +22,5 @@ int WINAPI WinMain(
             L"python -m " EXPAND_STRINGMACRO(MODULE), &argc);
     }
 
-    return Py_Main(argc, wargv);
+    ExitProcess(Py_Main(argc, wargv));
 }
