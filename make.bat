@@ -14,7 +14,7 @@ echo import site>>pkg\python37._pth
 
 call pip wheel -w wheels -r requirements.txt                    || goto :error
 call pip install -f wheels -r requirements.txt ^
-    -t pkg\Lib\site-packages  --no-index                        || goto :error
+    -t pkg\Lib\site-packages --no-index -I                      || goto :error
 call rd /s /q pkg\Lib\site-packages\bin
 
 :: Install py34 for mingwpy:

@@ -25,7 +25,7 @@ conda install -qy nsis -c nsis
 
 call pip wheel -w wheels -r requirements.txt
 call pip install -f wheels -r requirements.txt `
-    -t pkg\Lib\site-packages --no-index
+    -t pkg\Lib\site-packages --no-index -I
 rm -r pkg\Lib\site-packages\bin
 
 # Install py34 for mingwpy:
