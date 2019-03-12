@@ -1,4 +1,4 @@
-!define madguiVersion "19.1.0"
+!define madguiVersion "19.3.0"
 !define appFiles "$INSTDIR\madgui_${madguiVersion}"
 
 OutFile "madgui_${madguiVersion}_setup.exe"
