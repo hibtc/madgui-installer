@@ -1,17 +1,3 @@
-docopt
-docutils
-ipython
-numpy
-matplotlib
-pandas
-scipy
-pint==0.8.1
-pydicti
-PyQt5
-PyYAML
-qtconsole
-six
-importlib_resources
 cpymad==1.0.11
 minrpc==0.0.10
 madgui==19.01.0
