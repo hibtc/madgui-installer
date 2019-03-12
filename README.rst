@@ -24,7 +24,8 @@ using::
 This works for a while to finally create a ``madgui_X.X.X_setup.exe`` that can
 be used to install madgui on another machine.
 
-Next, copy runtime dependencies such as beamoptikdll into the madgui folder.
+After installation, copy runtime dependencies such as beamoptikdll into the
+madgui folder.
 
 
 Future directions
