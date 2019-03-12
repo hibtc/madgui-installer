@@ -1,10 +1,8 @@
 model_path: ./hit_models
 session_file: session.yml
-runtime_path: ./runtime
+runtime_path:
+  - ./beamoptikdll
+  - ../beamoptikdll
 
 online_control:
   backend: hit_acs.plugin:HitACS
-
-onload: |
-  import sys
-  sys.path.append('beamoptikdll')
