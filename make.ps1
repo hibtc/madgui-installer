@@ -35,13 +35,13 @@ conda install -p py34 -qy mingwpy -c conda-forge
 $gcc = "py34\Scripts\gcc.exe"
 $windres = "py34\Scripts\windres.exe"
 $cflags = @( '-Ipy37\include' )
-$lflags = @( '-Lpy37\libs', '-lpython37' )
+$lflags = @( '-Lpy37\libs', '-lpython37', '-nostdlib', '-lkernel32', '-lshell32' )
 
 call $gcc @cflags python.c @lflags -o pkg\python.exe
 
 call $windres madgui.rc -O coff -o madgui.res
 call $gcc @cflags launcher.c @lflags -o pkg\madgui.exe `
-    "-DMODULE=madgui" madgui.res
+    "-DMODULE=madgui" -mwindows madgui.res
 call $gcc @cflags launcher.c @lflags -o pkg\beamopt.exe `
     "-DMODULE=hit_acs.gui_qt"
 
