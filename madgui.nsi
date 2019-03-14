@@ -13,6 +13,5 @@ Section "madgui"
 
     SetOutPath "$INSTDIR"
     CreateShortCut "$INSTDIR\madgui_${madguiVersion}.lnk" "${appFiles}\madgui.exe"
-    CreateShortCut "$INSTDIR\beamopt_${madguiVersion}.lnk" "${appFiles}\beamopt.exe"
     File "madgui.yml"
 SectionEnd
