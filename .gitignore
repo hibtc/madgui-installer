@@ -1,7 +1,8 @@
 *.pyc
 python-*
 site-packages
-wheelhouse
+wheels
+pkg
 *.zip
 *.exe
 *.res
