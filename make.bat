@@ -25,7 +25,10 @@ call move pkg\Lib\site-packages\cpymad pkg\
 call move pkg\Lib\site-packages\hit_acs pkg\
 
 :: Remove .py files in thirdparty packages:
-call python minify.py pkg\Lib                                   || goto :error
+call python minify.py pkg\Lib\site-packages                     || goto :error
+:: Zip up pure packages for performance::
+call python purelib.py pkg\Lib\site-packages                    || goto :error
+call move purelib.zip pkg
 
 :: Install py34 for mingwpy:
 call conda create -p py34 -qy python=3.4                        || goto :error
