@@ -17,6 +17,12 @@ call pip install -f wheels -r requirements.txt ^
     -t pkg\Lib\site-packages --no-index -I                      || goto :error
 call rd /s /q pkg\Lib\site-packages\bin
 
+:: Safe our packages at top level to make them easier to find and edit:
+call move pkg\Lib\site-packages\madgui pkg\
+call move pkg\Lib\site-packages\minrpc pkg\
+call move pkg\Lib\site-packages\cpymad pkg\
+call move pkg\Lib\site-packages\hit_acs pkg\
+
 :: Install py34 for mingwpy:
 call conda create -p py34 -qy python=3.4                        || goto :error
 call conda install -p py34 -qy mingwpy -c conda-forge           || goto :error
