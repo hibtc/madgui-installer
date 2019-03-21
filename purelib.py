@@ -8,6 +8,18 @@ Usage:
 import os
 import sys
 from distlib.database import DistributionPath
+import setuptools.command.bdist_egg as bdist_egg
+from setuptools.command.bdist_egg import (
+    analyze_egg, scan_module as _scan_module)
+
+
+def scan_module(*args, **kwargs):
+    try:
+        return _scan_module(*args, **kwargs)
+    except ValueError:
+        return True
+
+bdist_egg.scan_module = scan_module
 
 
 def is_zip_safe(dist):
@@ -20,13 +32,28 @@ def is_zip_safe(dist):
         wheel_meta = f.read()
     purelib = 'Root-Is-Purelib: true' in wheel_meta
     zip_safe = os.path.exists(zip_safe_file)
-    # This is a stronger than necessary condition, i.e. will report fewer
-    # packages as safe than really are (only those that explicitly reported
-    # being safe). Avoiding false negatives would require additional static
-    # analysis such as using the `scan_module` and `analyze_egg` functions
-    # from the `setuptools.command.bdist_egg` module. For now, we keep it
-    # simple/stupid to avoid false positives:
-    return zip_safe and purelib
+    return purelib and (zip_safe or analyze_dist(dist))
+
+
+def analyze_dist(dist):
+    # Somewhat unsafe static analysis that tries to determine if a package is
+    # safe for zip-import.
+    toplevel = [
+        path
+        for path, hash, size in dist.list_installed_files()
+        if os.path.split(path)[0] == ''
+    ]
+    if any(p.endswith('.pth') for p in toplevel):
+        return False
+    for abspath in get_toplevel_pathes(dist):
+        if os.path.isdir(abspath):
+            if not analyze_egg(abspath, []):
+                return False
+        elif abspath.endswith('.pyc'):
+            base, name = os.path.split(abspath)
+            if not scan_module(base, base, name, []):
+                return False
+    return True
 
 
 def get_toplevel_pathes(dist):
