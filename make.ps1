@@ -45,5 +45,6 @@ call $gcc @cflags launcher.c @lflags -o pkg\madgui.exe `
 call $gcc @cflags launcher.c @lflags -o pkg\beamopt.exe `
     "-DMODULE=hit_acs.gui_qt"
 
+$VERSION = & $gcc -E -P -DSHOW_VERSION version.h
 cp madgui.yml pkg\
-call makensis madgui.nsi
+call makensis /DVERSION=$VERSION madgui.nsi

@@ -1,7 +1,6 @@
-!define madguiVersion "19.3.2"
-!define appFiles "$INSTDIR\madgui_${madguiVersion}"
+!define appFiles "$INSTDIR\madgui_${VERSION}"
 
-OutFile "madgui_${madguiVersion}_setup.exe"
+OutFile "madgui_${VERSION}_setup.exe"
 InstallDir "Z:\tools\madgui"
 
 Page directory
@@ -12,6 +11,6 @@ Section "madgui"
     File /r "pkg\*"
 
     SetOutPath "$INSTDIR"
-    CreateShortCut "$INSTDIR\madgui_${madguiVersion}.lnk" "${appFiles}\madgui.exe"
+    CreateShortCut "$INSTDIR\madgui_${VERSION}.lnk" "${appFiles}\madgui.exe"
     File "madgui.yml"
 SectionEnd

@@ -1,9 +1,13 @@
+#include "version.h"
+#define STR(x) _STR(x)
+#define _STR(x) #x
+
 id ICON "madgui.ico"
 
 // https://docs.microsoft.com/en-us/windows/desktop/menurc/versioninfo-resource
 1 VERSIONINFO
-FILEVERSION     19,3,2,0
-PRODUCTVERSION  19,3,2,0
+FILEVERSION     VERSION_COMMA,0
+PRODUCTVERSION  VERSION_COMMA,0
 BEGIN
     // https://docs.microsoft.com/en-us/windows/desktop/menurc/stringfileinfo-block
     BLOCK "StringFileInfo"
@@ -12,12 +16,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName",            "Heidelberg Ion Beam Therapy Center"
             VALUE "FileDescription",        "MAD-X GUI"
-            VALUE "FileVersion",            "19.3.2"
+            VALUE "FileVersion",            STR(VERSION_DOT)
             VALUE "InternalName",           "madgui"
-            VALUE "LegalCopyright",         "HIT GmbH"
+            VALUE "LegalCopyright",         COPYRIGHT
             VALUE "OriginalFilename",       "madgui.exe"
             VALUE "ProductName",            "madgui"
-            VALUE "ProductVersion",         "19.3.2"
+            VALUE "ProductVersion",         STR(VERSION_DOT)
         END
     END
     // https://docs.microsoft.com/en-us/windows/desktop/menurc/varfileinfo-block
