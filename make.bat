@@ -17,11 +17,15 @@ call pip install -f wheels -r requirements.txt ^
     -t pkg\Lib\site-packages --no-index -I                      || goto :error
 call rd /s /q pkg\Lib\site-packages\bin
 
-:: Safe our packages at top level to make them easier to find and edit:
+:: Safe our packages at top level to make them easier to find and edit,
+:: and to prevent them from being minified down below:
 call move pkg\Lib\site-packages\madgui pkg\
 call move pkg\Lib\site-packages\minrpc pkg\
 call move pkg\Lib\site-packages\cpymad pkg\
 call move pkg\Lib\site-packages\hit_acs pkg\
+
+:: Remove .py files in thirdparty packages:
+call python minify.py pkg\Lib                                   || goto :error
 
 :: Install py34 for mingwpy:
 call conda create -p py34 -qy python=3.4                        || goto :error
