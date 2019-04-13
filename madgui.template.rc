@@ -1,13 +1,10 @@
-#include "version.h"
-#define STR(x) _STR(x)
-#define _STR(x) #x
-
+// This file is filled in using the jinja2 template engine. Do not edit:
 id ICON "madgui.ico"
 
 // https://docs.microsoft.com/en-us/windows/desktop/menurc/versioninfo-resource
 1 VERSIONINFO
-FILEVERSION     VERSION_COMMA,0
-PRODUCTVERSION  VERSION_COMMA,0
+FILEVERSION     {{ VERSION | replace('.', ',') }},0
+PRODUCTVERSION  {{ VERSION | replace('.', ',') }},0
 BEGIN
     // https://docs.microsoft.com/en-us/windows/desktop/menurc/stringfileinfo-block
     BLOCK "StringFileInfo"
@@ -16,12 +13,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName",            "Heidelberg Ion Beam Therapy Center"
             VALUE "FileDescription",        "MAD-X GUI"
-            VALUE "FileVersion",            STR(VERSION_DOT)
+            VALUE "FileVersion",            "{{ VERSION }}"
             VALUE "InternalName",           "madgui"
             VALUE "LegalCopyright",         "(C) 2013-2019 HIT Betriebs GmbH"
             VALUE "OriginalFilename",       "madgui.exe"
             VALUE "ProductName",            "madgui"
-            VALUE "ProductVersion",         STR(VERSION_DOT)
+            VALUE "ProductVersion",         "{{ VERSION }}"
         END
     END
     // https://docs.microsoft.com/en-us/windows/desktop/menurc/varfileinfo-block

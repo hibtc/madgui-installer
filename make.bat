@@ -36,10 +36,10 @@ set "windres=py34\Scripts\windres.exe"
 set "cflags=-Ipy37\include"
 set "lflags=-Lpy37\libs -lpython37 -nostdlib -lkernel32 -lshell32"
 
-:: Determine madgui version, and create version.h required by madgui.rc:
+:: Determine madgui version, and create madgui.rc:
 for /f %%G in ('pkg\python -c "import madgui; print(madgui.__version__)"') do (set "VERSION=%%G")
 call pip install jinja2-cli
-call jinja2 -DVERSION=%VERSION% version.template.h > version.h
+call jinja2 madgui.template.rc -DVERSION=%VERSION% > madgui.rc
 
 call %gcc% %cflags% python.c %lflags% -o pkg\python.exe         || goto :error
 
