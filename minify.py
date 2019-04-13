@@ -15,6 +15,9 @@ import py_compile
 
 def main(site_dirs):
     for base in site_dirs:
+        trash(glob(base + r'\**\testsuite', recursive=True))
+        trash(glob(base + r'\**\tests', recursive=True))
+
         for py_file in glob(base + r'\**\*.py', recursive=True):
             py_compile.compile(py_file, py_file + 'c')
 
