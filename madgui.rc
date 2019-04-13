@@ -18,7 +18,7 @@ BEGIN
             VALUE "FileDescription",        "MAD-X GUI"
             VALUE "FileVersion",            STR(VERSION_DOT)
             VALUE "InternalName",           "madgui"
-            VALUE "LegalCopyright",         COPYRIGHT
+            VALUE "LegalCopyright",         "(C) 2013-2019 HIT Betriebs GmbH"
             VALUE "OriginalFilename",       "madgui.exe"
             VALUE "ProductName",            "madgui"
             VALUE "ProductVersion",         STR(VERSION_DOT)

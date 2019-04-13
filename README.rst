@@ -28,6 +28,13 @@ After installation, copy runtime dependencies such as beamoptikdll into the
 madgui folder.
 
 
+Update madgui version
+---------------------
+
+The versions of madgui and its dependencies are configured in the
+``requirements.txt`` file.
+
+
 Future directions
 -----------------
 
