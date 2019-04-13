@@ -12,6 +12,7 @@ call 7za x -y -opkg "%ZIP%"                                     || goto :error
 :: DO NOT add quotes or space around `import site`, it will mess up the output!
 echo import site>>pkg\python37._pth
 echo purelib.zip>>pkg\python37._pth
+echo distinfo.zip>>pkg\python37._pth
 
 call pip wheel -w wheels -r requirements.txt                    || goto :error
 call pip install -f wheels -r requirements.txt ^

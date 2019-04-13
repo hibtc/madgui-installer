@@ -18,6 +18,7 @@ $web.DownloadFile($url, $zip)
 Expand-Archive -Force -LiteralPath $zip -DestinationPath pkg
 Add-Content pkg\python37._pth "import site`r`n"
 Add-Content pkg\python37._pth "purelib.zip`r`n"
+Add-Content pkg\python37._pth "distinfo.zip`r`n"
 
 # Install py37 for site-packages:
 conda create -p py37 -qy python=3.7 wheel

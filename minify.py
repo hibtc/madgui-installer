@@ -11,6 +11,7 @@ import sys
 import os
 import shutil
 import py_compile
+import zipfile
 
 
 def main(site_dirs):
@@ -23,6 +24,10 @@ def main(site_dirs):
 
         trash(glob(base + r'\**\*.py', recursive=True))
         trash(glob(base + r'\**\__pycache__', recursive=True))
+
+    dist_info = sum([glob(base + r'\*.dist-info') for base in sys.argv[1:]], [])
+    zipfile.main(['--create', r'pkg\distinfo.zip'] + dist_info)
+    trash(dist_info)
 
 
 def trash(pathes, base='.', trash_dir='trash'):
