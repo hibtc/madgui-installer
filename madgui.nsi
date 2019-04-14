@@ -3,6 +3,10 @@
 OutFile "madgui_${VERSION}_setup.exe"
 InstallDir "Z:\tools\madgui"
 
+# Need unelevated execution context to be able to see
+# network drives of the current user (Z:\):
+RequestExecutionLevel user
+
 Page directory
 Page instfiles
 
