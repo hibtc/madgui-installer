@@ -38,8 +38,8 @@ set "lflags=-Lpy37\libs -lpython37 -nostdlib -lkernel32 -lshell32"
 
 :: Determine madgui version, and create madgui.rc:
 for /f %%G in ('pkg\python -c "import madgui; print(madgui.__version__)"') do (set "VERSION=%%G")
-call pip install jinja2-cli
-call jinja2 madgui.template.rc -DVERSION=%VERSION% > madgui.rc
+call pip install j2cli
+call j2 madgui.template.rc > madgui.rc
 
 call %gcc% %cflags% python.c %lflags% -o pkg\python.exe         || goto :error
 

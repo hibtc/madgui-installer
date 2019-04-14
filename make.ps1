@@ -48,9 +48,9 @@ $cflags = @( '-Ipy37\include' )
 $lflags = @( '-Lpy37\libs', '-lpython37', '-nostdlib', '-lkernel32', '-lshell32' )
 
 # Determine madgui version, and create madgui.rc:
-$VERSION = & python -c "import madgui; print(madgui.__version__)"
-call pip install jinja2-cli
-call jinja2 -DVERSION=$VERSION madgui.template.rc > madgui.rc
+$env:VERSION = & python -c "import madgui; print(madgui.__version__)"
+call pip install j2cli
+call j2 madgui.template.rc > madgui.rc
 
 call $gcc @cflags python.c @lflags -o pkg\python.exe
 
@@ -61,4 +61,4 @@ call $gcc @cflags launcher.c @lflags -o pkg\beamopt.exe `
     "-DMODULE=hit_acs.gui_qt"
 
 cp madgui.yml pkg\
-call makensis /DVERSION=$VERSION madgui.nsi
+call makensis /DVERSION=$env:VERSION madgui.nsi
