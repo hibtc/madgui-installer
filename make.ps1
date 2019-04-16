@@ -47,9 +47,10 @@ $windres = "py34\Scripts\windres.exe"
 $cflags = @( '-Ipy37\include' )
 $lflags = @( '-Lpy37\libs', '-lpython37', '-nostdlib', '-lkernel32', '-lshell32' )
 
-# Determine madgui version, and create version.h required by madgui.rc:
-call pkg\python -c "import madgui; print('#define VERSION_DOT {}'.format(madgui.__version__))" > version.h
-call pkg\python -c "import madgui; print('#define VERSION_COMMA {}'.format(madgui.__version__).replace('.', ','))" >> version.h
+# Determine madgui version, and create madgui.rc:
+$env:VERSION = & python -c "import madgui; print(madgui.__version__)"
+call pip install j2cli
+call j2 madgui.template.rc > madgui.rc
 
 call $gcc @cflags python.c @lflags -o pkg\python.exe
 
@@ -59,6 +60,5 @@ call $gcc @cflags launcher.c @lflags -o pkg\madgui.exe `
 call $gcc @cflags launcher.c @lflags -o pkg\beamopt.exe `
     "-DMODULE=hit_acs.gui_qt"
 
-$VERSION = & $gcc -E -P -DSHOW_VERSION version.h
 cp madgui.yml pkg\
-call makensis /DVERSION=$VERSION madgui.nsi
+call makensis /DVERSION=$env:VERSION madgui.nsi
