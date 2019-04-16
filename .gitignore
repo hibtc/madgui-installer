@@ -8,3 +8,4 @@ pkg
 *.res
 *.o
 py3*
+version.h

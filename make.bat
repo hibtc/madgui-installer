@@ -36,6 +36,10 @@ set "windres=py34\Scripts\windres.exe"
 set "cflags=-Ipy37\include"
 set "lflags=-Lpy37\libs -lpython37 -nostdlib -lkernel32 -lshell32"
 
+:: Determine madgui version, and create version.h required by madgui.rc:
+call pkg\python -c "import madgui; print('#define VERSION_DOT {}'.format(madgui.__version__))" > version.h
+call pkg\python -c "import madgui; print('#define VERSION_COMMA {}'.format(madgui.__version__).replace('.', ','))" >> version.h
+
 call %gcc% %cflags% python.c %lflags% -o pkg\python.exe         || goto :error
 
 call %windres% madgui.rc -O coff -o madgui.res                  || goto :error
