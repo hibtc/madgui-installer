@@ -3,6 +3,7 @@ python-*
 site-packages
 wheels
 pkg
+trash
 *.zip
 *.exe
 *.res

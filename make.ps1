@@ -16,7 +16,8 @@ $url = "https://www.python.org/ftp/python/3.7.2/$zip"
 $web = New-Object System.Net.WebClient
 $web.DownloadFile($url, $zip)
 Expand-Archive -Force -LiteralPath $zip -DestinationPath pkg
-Add-Content pkg\python37._pth "`r`nimport site`r`n"
+Add-Content pkg\python37._pth "import site`r`n"
+Add-Content pkg\python37._pth "purelib.zip`r`n"
 
 # Install py37 for site-packages:
 conda create -p py37 -qy python=3.7 wheel
@@ -35,8 +36,11 @@ mv pkg\Lib\site-packages\minrpc pkg
 mv pkg\Lib\site-packages\cpymad pkg
 mv pkg\Lib\site-packages\hit_acs pkg
 
-# Remove .py files in thirdparty packages:
-call python minify.py pkg\Lib
+# Performance tweaks: remove .py files and zip up pure thirdparty packages:
+call pip install distlib
+call python minify.py pkg\Lib\site-packages
+call python purelib.py pkg\Lib\site-packages
+mv purelib.zip pkg
 
 # Install py34 for mingwpy:
 conda create -p py34 -qy python=3.4
