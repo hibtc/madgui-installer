@@ -5,8 +5,8 @@ call conda install -qy nsis -c nsis                             || goto :error
 call conda install -qy 7za pywget                               || goto :error
 
 :: Download embeddable python:
-set "ZIP=python-3.7.2.post1-embed-amd64.zip"
-set "URL=https://www.python.org/ftp/python/3.7.2/%ZIP%"
+set "ZIP=python-3.7.3-embed-amd64.zip"
+set "URL=https://www.python.org/ftp/python/3.7.3/%ZIP%"
 call python -m wget "%URL%" -o "%ZIP%"                          || goto :error
 call 7za x -y -opkg "%ZIP%"                                     || goto :error
 :: DO NOT add quotes or space around `import site`, it will mess up the output!

@@ -11,8 +11,8 @@ function call()
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;
 
 # Download embeddable python:
-$zip = "python-3.7.2.post1-embed-amd64.zip"
-$url = "https://www.python.org/ftp/python/3.7.2/$zip"
+$zip = "python-3.7.3-embed-amd64.zip"
+$url = "https://www.python.org/ftp/python/3.7.3/$zip"
 $web = New-Object System.Net.WebClient
 $web.DownloadFile($url, $zip)
 Expand-Archive -Force -LiteralPath $zip -DestinationPath pkg
