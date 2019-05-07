@@ -1,0 +1,41 @@
+platform:
+  - x86
+  - x64
+
+environment:
+  # For Python versions available on Appveyor, see
+  # https://www.appveyor.com/docs/windows-images-software/#python
+  global:
+    CONDAPATH: 'C:\Miniconda37'
+
+install:
+  # Log environment for informational purposes:
+  - set
+
+  # Configure and activate conda:
+  - if "%PLATFORM%" == "x64" set "CONDAPATH=%CONDAPATH%-x64"
+  - set "PATH=%CONDAPATH%\bin;%CONDAPATH%\Scripts;%PATH%"
+  - conda update -qy conda
+  - conda init cmd.exe
+  - if "%PLATFORM%" == "x86" set "CONDA_FORCE_32BIT=1"
+
+build: off
+
+test_script:
+  - call make.bat
+
+  # append platform tag to the exe name:
+  - for %%a in (madgui_*_setup.exe) do (ren "%%~a" "%%~na_%PLATFORM%%%~xa")
+
+artifacts:
+  - path: madgui_*_setup_*.exe
+
+deploy:
+  provider: GitHub
+  artifact: /madgui_.*_setup_.*\.exe/
+  description: Installer for madgui
+  auth_token:
+    secure: 2hapiBHmBOsgU/mkV9oZj32JeWacW0rY6GSUiegz4ToVCmC70YMlTmiHpDR3wPOO
+  force_update: true
+  on:
+    APPVEYOR_REPO_TAG: true
