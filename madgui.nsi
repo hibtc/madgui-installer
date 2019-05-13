@@ -15,6 +15,6 @@ Section "madgui"
     File /r "pkg\*"
 
     SetOutPath "$INSTDIR"
-    CreateShortCut "$INSTDIR\madgui_${VERSION}.lnk" "${appFiles}\madgui.exe"
+    File "madgui.exe"
     File "madgui.yml"
 SectionEnd

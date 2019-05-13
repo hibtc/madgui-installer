@@ -63,6 +63,8 @@ call $gcc @cflags launcher.c @lflags -o pkg\madgui.exe `
     "-DMODULE=madgui" -mwindows madgui.res
 call $gcc @cflags launcher.c @lflags -o pkg\beamopt.exe `
     "-DMODULE=hit_acs.gui_qt"
+call $gcc $cflags shim.c $lflags -o madgui.exe `
+    "-DEXE=madgui_$VERSION\\madgui.exe" madgui.res -mwindows
 
 cp madgui.yml pkg\
 call makensis /DVERSION=$env:VERSION madgui.nsi

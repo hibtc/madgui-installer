@@ -52,6 +52,8 @@ call %gcc% %cflags% launcher.c %lflags% -o pkg\madgui.exe ^
     -DMODULE=madgui madgui.res -mwindows                        || goto :error
 call %gcc% %cflags% launcher.c %lflags% -o pkg\beamopt.exe ^
     -DMODULE=hit_acs.gui_qt                                     || goto :error
+call %gcc% %cflags% shim.c %lflags% -o madgui.exe ^
+    -DEXE=madgui_%VERSION%\\madgui.exe madgui.res -mwindows      || goto :error
 
 copy madgui.yml pkg                                             || goto :error
 call makensis /DVERSION=%VERSION% madgui.nsi                    || goto :error
