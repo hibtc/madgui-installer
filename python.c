@@ -5,10 +5,10 @@
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 
-int WINAPI wWinMain(
+int WINAPI WinMain(
     HINSTANCE hInstance,      /* handle to current instance */
     HINSTANCE hPrevInstance,  /* handle to previous instance */
-    LPWSTR lpCmdLine,         /* pointer to command line */
+    LPSTR lpCmdLine,         /* pointer to command line */
     int nCmdShow              /* show state of window */
 )
 {
