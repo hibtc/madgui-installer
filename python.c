@@ -2,9 +2,10 @@
 // the official python.exe. The reason we need this is that for some reason the
 // BeamOptikDLL64.dll does not work with the official python.exe on python 3.5
 // and later.
-#include <windows.h>
 #include "python.h"
 
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
 
 int WINAPI WinMain(
         HINSTANCE hInstance,
