@@ -6,11 +6,15 @@
 #include "python.h"
 
 
-void WINAPI WinMainCRTStartup()
+int WINAPI WinMain(
+        HINSTANCE hInstance,
+        HINSTANCE hPrevInstance,
+        LPTSTR lpCmdLine,
+        int nCmdShow)
 {
     int argc;
     wchar_t** wargv = CommandLineToArgvW(
         GetCommandLineW(), &argc);
 
-    ExitProcess(Py_Main(argc, wargv));
+    return Py_Main(argc, wargv);
 }

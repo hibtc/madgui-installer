@@ -49,7 +49,7 @@ conda install -p py34 -qy mingwpy -c conda-forge
 $gcc = "py34\Scripts\gcc.exe"
 $windres = "py34\Scripts\windres.exe"
 $cflags = @( '-Ipy37\include' )
-$lflags = @( '-Lpy37\libs', '-lpython37', '-nostdlib', '-lkernel32', '-lshell32' )
+$lflags = @( '-Lpy37\libs', '-lpython37' )
 
 # Determine madgui version, and create madgui.rc:
 $env:VERSION = & python -c "import madgui; print(madgui.__version__)"
