@@ -1,16 +1,16 @@
-// This file defines a simple replacement python.exe as drop in replacement for
-// the official python.exe. The reason we need this is that for some reason the
-// BeamOptikDLL64.dll does not work with the official python.exe on python 3.5
-// and later.
+/* Minimal main program -- everything is loaded from the library. */
+
+#include "Python.h"
+
+#define WIN32_LEAN_AND_MEAN
 #include <windows.h>
-#include "python.h"
 
-
-void WINAPI WinMainCRTStartup()
+int WINAPI wWinMain(
+    HINSTANCE hInstance,      /* handle to current instance */
+    HINSTANCE hPrevInstance,  /* handle to previous instance */
+    LPWSTR lpCmdLine,         /* pointer to command line */
+    int nCmdShow              /* show state of window */
+)
 {
-    int argc;
-    wchar_t** wargv = CommandLineToArgvW(
-        GetCommandLineW(), &argc);
-
-    ExitProcess(Py_Main(argc, wargv));
+    return Py_Main(__argc, __wargv);
 }

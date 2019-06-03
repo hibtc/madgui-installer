@@ -25,14 +25,14 @@ test_script:
   - call make.bat
 
   # append platform tag to the exe name:
-  - for %%a in (madgui_*_setup.exe) do (ren "%%~a" "%%~na_%PLATFORM%%%~xa")
+  # - for %%a in (madgui_*_setup.exe) do (ren "%%~a" "%%~na_%PLATFORM%%%~xa")
 
 artifacts:
-  - path: madgui_*_setup_*.exe
+  - path: pkg\*.exe
 
 deploy:
   provider: GitHub
-  artifact: /madgui_.*_setup_.*\.exe/
+  artifact: /pkg\*.exe/
   description: Installer for madgui
   auth_token:
     secure: 2hapiBHmBOsgU/mkV9oZj32JeWacW0rY6GSUiegz4ToVCmC70YMlTmiHpDR3wPOO

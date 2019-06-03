@@ -38,7 +38,7 @@ call conda install -p py34 -qy mingwpy -c conda-forge           || goto :error
 set "gcc=py34\Scripts\gcc.exe"
 set "windres=py34\Scripts\windres.exe"
 set "cflags=-Ipy37\include"
-set "lflags=-Lpy37\libs -lpython37 -nostdlib -lkernel32 -lshell32"
+set "lflags=-Lpy37\libs -lpython37"
 
 :: Determine madgui version, and create madgui.rc:
 for /f %%G in ('pkg\python -c "import madgui; print(madgui.__version__)"') do (set "VERSION=%%G")
