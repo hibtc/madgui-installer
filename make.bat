@@ -16,7 +16,7 @@ call conda install -p py34 -qy mingwpy -c conda-forge           || goto :error
 
 set "gcc=py34\Scripts\gcc.exe"
 set "windres=py34\Scripts\windres.exe"
-set "cflags=-Ipy37\include"
+set "cflags=-Ipy37\include -DUNICODE -D_UNICODE"
 set "lflags=-Lpy37\libs -lpython37"
 
 call %gcc% %cflags% python.c %lflags% -o pkg\python.exe         || goto :error
