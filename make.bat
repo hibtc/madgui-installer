@@ -11,9 +11,10 @@ call 7za x -y -opkg "%ZIP%"                                     || goto :error
 
 
 call lib /machine:x64 /def:python.def /out:python37.lib
-call cl /nologo /EHsc /DUNICODE /D_UNICODE /D__UNICODE python.c                                  ^
+call cl /nologo /Gm- /GR- /EHa- /Oi                              ^
+    /DUNICODE /D_UNICODE /D__UNICODE python.c                   ^
     python37.lib kernel32.lib shell32.lib                       ^
-    /link /out:pkg\python.exe                                   || goto :error
+    /link /nodefaultlib /subsystem:windows /out:pkg\python.exe                                   || goto :error
 
 @exit /b 0
 
