@@ -2,7 +2,11 @@
 
 typedef void (__stdcall * TGetInterfaceInstance) (int*, int*);
 
-void WINAPI WinMainCRTStartup()
+int WINAPI WinMain(
+        HINSTANCE hInstance,
+        HINSTANCE hPrevInstance,
+        LPSTR lpCmdLine,
+        int nCmdShow)
 {
     HMODULE dll = LoadLibraryA("BeamOptikDLL64.dll");
 
@@ -13,5 +17,5 @@ void WINAPI WinMainCRTStartup()
 
     GetInterfaceInstance(&iid, &done);
 
-    ExitProcess(done);
+    return (done);
 }
