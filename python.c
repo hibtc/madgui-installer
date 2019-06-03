@@ -3,8 +3,8 @@
 // BeamOptikDLL64.dll does not work with the official python.exe on python 3.5
 // and later.
 #include <windows.h>
-#include "python.h"
 
+extern int Py_Main(int argc, wchar_t **argv);
 
 int WINAPI WinMain(
         HINSTANCE hInstance,
