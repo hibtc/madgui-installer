@@ -4,7 +4,7 @@ call md pkg
 call cl                         ^
     python.c                            ^
     kernel32.lib                        ^
-    /link /nodefaultlib /subsystem:windows /out:pkg\python.exe                                   || goto :error
+    /link /nodefaultlib /out:pkg\python.exe                                   || goto :error
 
 @exit /b 0
 
