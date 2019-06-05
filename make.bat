@@ -11,7 +11,7 @@ call python -m wget "%URL%" -o "%ZIP%"                          || goto :error
 call 7za x -y -opkg "%ZIP%"                                     || goto :error
 :: DO NOT add quotes or space around `import site`, it will mess up the output!
 echo import site>>pkg\python37._pth
-echo purelib.zip>>pkg\python37._pth
+:: echo purelib.zip>>pkg\python37._pth
 
 call pip wheel -w wheels -r requirements.txt                    || goto :error
 call pip install -f wheels -r requirements.txt ^
@@ -27,9 +27,9 @@ call move pkg\Lib\site-packages\hit_acs pkg\
 
 :: Performance tweaks: remove .py files and zip up pure thirdparty packages:
 call pip install distlib                                        || goto :error
-call python minify.py pkg\Lib\site-packages                     || goto :error
-call python purelib.py pkg\Lib\site-packages                    || goto :error
-call move purelib.zip pkg
+:: call python minify.py pkg\Lib\site-packages                     || goto :error
+:: call python purelib.py pkg\Lib\site-packages                    || goto :error
+:: call move purelib.zip pkg
 
 :: Install py34 for mingwpy:
 call conda create -p py34 -qy python=3.4                        || goto :error
