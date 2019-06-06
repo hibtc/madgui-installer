@@ -1,4 +1,4 @@
 cpymad==1.2.1
 minrpc==0.0.11
-madgui==19.6.2
+madgui==19.6.3
 hit_acs==19.5.1
