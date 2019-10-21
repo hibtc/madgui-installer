@@ -43,7 +43,7 @@ call python purelib.py pkg\Lib\site-packages
 mv purelib.zip pkg
 
 # Install py34 for mingwpy:
-conda create -p py34 -qy python=3.4
+conda create -p py34 -qy python=3.4 -c conda-forge
 conda install -p py34 -qy mingwpy -c conda-forge
 
 $gcc = "py34\Scripts\gcc.exe"

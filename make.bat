@@ -32,7 +32,7 @@ call python purelib.py pkg\Lib\site-packages                    || goto :error
 call move purelib.zip pkg
 
 :: Install py34 for mingwpy:
-call conda create -p py34 -qy python=3.4                        || goto :error
+call conda create -p py34 -qy python=3.4 -c conda-forge         || goto :error
 call conda install -p py34 -qy mingwpy -c conda-forge           || goto :error
 
 set "gcc=py34\Scripts\gcc.exe"
