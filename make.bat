@@ -1,3 +1,7 @@
+:: Make sure to use conda version 4.6.14 or lower
+:: mingwpy just runs in Python 3.4, newer versions of Conda
+:: dont support it
+
 :: Install py37 for site-packages:
 call conda create -p py37 -qy python=3.7 wheel                  || goto :error
 call conda activate .\py37                                      || goto :error
@@ -26,10 +30,11 @@ call move pkg\Lib\site-packages\cpymad pkg\
 call move pkg\Lib\site-packages\hit_acs pkg\
 
 :: Performance tweaks: remove .py files and zip up pure thirdparty packages:
-call pip install distlib                                        || goto :error
-call python minify.py pkg\Lib\site-packages                     || goto :error
-call python purelib.py pkg\Lib\site-packages                    || goto :error
-call move purelib.zip pkg
+:: call pip install distlib                                        || goto :error
+:: call python minify.py pkg\Lib\site-packages                     || goto :error
+:: call python purelib.py pkg\Lib\site-packages                    || goto :error
+:: call move purelib.zip pkg
+:: This actually didnt work last time
 
 :: Install py34 for mingwpy:
 call conda create -p py34 -qy python=3.4 -c conda-forge         || goto :error
